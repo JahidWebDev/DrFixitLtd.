@@ -1,0 +1,22 @@
+
+@import "tailwindcss";
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+}
+
+
+@keyframes leftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(12px); /* হালকা ডানে যাবে */
+  }
+}
+
+.animate-leftRight {
+  animation: leftRight 2s ease-in-out infinite;
+}
