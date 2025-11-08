@@ -1,14 +1,11 @@
-
 @import "tailwindcss";
-
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
- 
 }
 
-
-@keyframes leftRight {
+/* 🔹 Dr. Fixit floating animation (used by className="animate") */
+@keyframes animate {
   0%, 100% {
     transform: translateX(0);
   }
@@ -17,6 +14,34 @@
   }
 }
 
+/* ✅ Fix: match animation name and class */
+.animate {
+  animation: animate 2.5s ease-in-out infinite;
+}
+
+/* 🔹 Optional: For your sidebar buttons */
+@keyframes leftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes rightLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
 .animate-leftRight {
-  animation: leftRight 2s ease-in-out infinite;
+  animation: leftRight 2.5s ease-in-out infinite;
+}
+
+.animate-rightLeft {
+  animation: rightLeft 2.5s ease-in-out infinite;
 }

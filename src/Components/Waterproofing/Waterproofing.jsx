@@ -185,53 +185,29 @@ const [selected, setSelected] = useState("repair");
 
             {/* Floating CTAs (desktop only) */}
                 <div
-      className={`hidden lg:flex flex-col gap-4 fixed right-8 top-1/3 z-40 transition-all duration-700 ${
+      className={`hidden lg:flex flex-col gap-5 fixed right-8 top-1/3 z-40 transition-all duration-700 ${
         animate ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
       }`}
     >
       {/* Let's Talk Button */}
-      <a
-        href="#contact"
-        className="flex items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-leftRight"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 10h4l3-8 4 18 3-8h4"
-          />
-        </svg>
-        <span className="font-medium">Let's Talk</span>
-      </a>
+   {/* Let's Talk Button */}
+<a
+  href="#contact"
+  className="flex justify-center items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-leftRight"
+>
+   Let's Talk Button 
+</a>
 
-      {/* Find a Dealer Button */}
-      <a
-        href="#dealers"
-        className="flex items-center gap-3 bg-yellow-400 text-black px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-leftRight"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 7h18M3 12h18M3 17h18"
-          />
-        </svg>
-        <span className="font-medium">Find a Dealer</span>
-      </a>
+{/* Find a Dealer Button */}
+<a
+  href="#dealers"
+  className="flex items-center gap-3 bg-yellow-400 text-black px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-rightLeft"
+>
+  Find a Dealer Button
+</a>
+
+
+    
     </div>
           </div>
         </div>

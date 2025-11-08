@@ -172,15 +172,16 @@ const Header = () => {
 
     {dropdownOpen && (
       <div className="absolute bg-yellow-400 text-black mt-4 w-48 rounded-md shadow-lg py-2 z-50">
-        <Link href="#" className="block px-4 py-2 hover:bg-yellow-500">
-          New Construction
-        </Link>
-        <Link href="#" className="block px-4 py-2 hover:bg-yellow-500">
-          Repair Construction
-        </Link>
-        <Link href="#" className="block px-4 py-2 hover:bg-yellow-500">
-          Remover
-        </Link>
+ <Link to="/newconstruction" className="block px-4 py-2 hover:bg-yellow-500">
+  New Construction
+</Link>
+<Link to="/repair" className="block px-4 py-2 hover:bg-yellow-500">
+  Repair Construction
+</Link>
+<Link to="/remover" className="block px-4 py-2 hover:bg-yellow-500">
+  Remover
+</Link>
+
       </div>
     )}
   </li>
@@ -368,7 +369,7 @@ offers Link comprehensive range of products to meet all your
 
       {/* Bottom Info */}
  <div className="mt-10 text-left overflow-hidden">
-  <div className="inline-block animate-leftRight">
+  <div className="inline-block animate">
     <p className="inline-flex items-center gap-2 bg-yellow-400 text-black font-semibold px-5 py-2 rounded-full shadow-md">
       <FaWater className="text-black" />
       Dr. Fixit Ltd. Advice Centre
