@@ -7,6 +7,9 @@ import Logo from "../../Home-page-images/Logo.jpg";
 import { FaUser, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -120,11 +123,13 @@ const Header = () => {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="#" className="shrink-0">
-            <img
-              className="h-12 md:h-16"
-              src={Logo}
-              alt="Dr. Fixit Ltd. Logo"
-            />
+         <img
+  className="h-12 md:h-16"
+  src={Logo}
+  alt="Dr. Fixit Ltd. Logo"
+  loading="lazy"
+/>
+
           </Link>
 
           {/* Desktop Menu */}

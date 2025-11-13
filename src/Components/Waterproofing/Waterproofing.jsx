@@ -13,6 +13,11 @@ import basementImg from "../../Home-page-images/bathroom.png";
 import roofCoatingImg from "../../Home-page-images/interior.png";
 import tankImg from "../../Home-page-images/exterior.png";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+
+
 const Waterproofing = ({
   thumbnailSrc = "https://youtu.be/IRQlROp0X-w?si=LMRNEG8Z1046Y8in",
   youtubeId = "VIDEO_ID", // replace with actual YouTube ID
@@ -370,11 +375,12 @@ const [selected, setSelected] = useState("repair");
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
             >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-[250px] object-cover"
-              />
+                <LazyLoadImage
+                  src={item.img}
+                  alt={item.title}
+                  
+                  className="w-full h-[250px] object-cover"
+                />
               <p className="text-lg font-medium text-gray-800 mt-4 mb-6">
                 {item.title}
               </p>
