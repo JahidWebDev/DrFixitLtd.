@@ -285,10 +285,15 @@ const Newconstruction = () => {
                       {p.name}
                     </h3>
 
-                    <div className="mt-5 w-full flex flex-col gap-3">
-                      <button className="border border-blue-700 text-blue-700 font-medium py-2 rounded-full hover:bg-blue-700 hover:text-white transition-all">
+                    <div className="mt-5 w-full flex flex-col gap-3 text-center">
+                       <Link
+                        to={`/productdetails/${p.id}`}
+                        state={{ showBanner: true }}
+                        className="
+                      border border-blue-700 text-blue-700 font-medium py-2 rounded-full hover:bg-blue-700 hover:text-white transition-all"
+                      >
                         Product Details
-                      </button>
+                      </Link>
                       <button className="bg-yellow-400 text-black font-medium py-2 rounded-full hover:bg-yellow-500 transition-all">
                         Find a Dealer
                       </button>

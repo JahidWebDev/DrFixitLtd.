@@ -3,6 +3,7 @@ import Header from "./Components/Header/Header";
 import Waterproofing from "./Components/Waterproofing/Waterproofing";
 import Footer from "./Components/Footer/Footer";
 import Newconstruction from "./Components/NewConstruction/Newconstruction";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 
 function Home() {
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newconstruction" element={<Newconstruction />} />
-        
+        <Route path="/productdetails/:id" element={<ProductDetails />} />
         
       </Routes>
       <Footer />
