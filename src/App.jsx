@@ -4,6 +4,7 @@ import Waterproofing from "./Components/Waterproofing/Waterproofing";
 import Footer from "./Components/Footer/Footer";
 import Newconstruction from "./Components/NewConstruction/Newconstruction";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import ScrollToTop from "./Components/ScrollToTop";
 
 
 function Home() {
@@ -18,7 +19,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newconstruction" element={<Newconstruction />} />
