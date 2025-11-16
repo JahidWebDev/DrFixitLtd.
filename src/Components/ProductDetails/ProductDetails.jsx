@@ -5,11 +5,15 @@ import { FiDroplet, FiChevronRight, FiCheck, FiHome } from "react-icons/fi";
 import img1 from "../../New-construction-images/download.jpg";
 import Logo from "../../Home-page-images/Logo.jpg";
 
-import product1 from "../../New-construction-images/LW+ 20kg.png";
-import product2 from "../../New-construction-images/LW+ 5kg.png";
-import product3 from "../../New-construction-images/LW+ 20kg.png";
-import product4 from "../../New-construction-images/LW+ 20kg.png";
-import product5 from "../../New-construction-images/LW+ 20kg.png";
+import product1 from "../../New-construction-images/Dr-Fixit-Brand-LW+-101-1-Litre.png";
+import product2 from "../../New-construction-images/Dr-Fixit-Brand-Plaster-Master.png";
+import product3 from "../../New-construction-images/Dr-Fixit-Brand-LW-101-30-Litre.png";
+import product4 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
+import product5 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
+import product6 from "../../New-construction-images/Fevilock-500-ml.png";
+import product7 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
+import product8 from "../../New-construction-images/Rust-Remover-01-Litre.png";
+import product9 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 
 const products = [
   {
@@ -77,6 +81,51 @@ const products = [
     images: [{ id: 1, url: product5 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
+  {
+    id: 6,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product6 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 7,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product7 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 8,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product8 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 9,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product9 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  
 ];
 
 const ProductDetails = () => {
@@ -219,7 +268,7 @@ const ProductDetails = () => {
 
   {/* 3 THUMBNAIL LOOP (ID: 1,2,3,4,5) */}
   <div className="flex gap-4 mt-6">
-    {[1, 2, 3, 4, 5,].map((pid) => {
+    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pid) => {
       const item = products.find((p) => p.id === pid);
 
       return (

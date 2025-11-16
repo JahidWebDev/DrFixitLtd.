@@ -20,7 +20,7 @@ import product8 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product9 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 
 
-const Newconstruction = () => {
+const RepairConstruction = () => {
  const [activeTab, setActiveTab] = useState("repair");
   const [selectedLeakage, setSelectedLeakage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -349,4 +349,4 @@ const Newconstruction = () => {
   );
 };
 
-export default Newconstruction;
+export default RepairConstruction;
