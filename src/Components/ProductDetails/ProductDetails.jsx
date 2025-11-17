@@ -8,13 +8,12 @@ import Logo from "../../Home-page-images/Logo.jpg";
 import product1 from "../../New-construction-images/Dr-Fixit-Brand-LW+-101-1-Litre.png";
 import product2 from "../../New-construction-images/Dr-Fixit-Brand-Plaster-Master.png";
 import product3 from "../../New-construction-images/Dr-Fixit-Brand-LW-101-30-Litre.png";
-import product4 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
-import product5 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
-import product6 from "../../New-construction-images/Fevilock-500-ml.png";
-import product7 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
-import product8 from "../../New-construction-images/Rust-Remover-01-Litre.png";
-import product9 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
-
+import product5 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
+import product8 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
+import product9 from "../../New-construction-images/Fevilock-500-ml.png";
+import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
+import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
+import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 const products = [
   {
     id: 1,
@@ -24,17 +23,9 @@ const products = [
     quantity: "1 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
-    description:
-      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound...",
+    description: "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound...",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product1 }],
-    features: [
-      "Waterproofs concrete during the construction stage.",
-      "Improves workability.",
-      "Avoids cracking.",
-      "Protect concrete from corrosion.",
-      "LW+ should be used in concrete, plaster and mortar in all the areas of house."
-    ]
   },
   {
     id: 2,
@@ -46,7 +37,6 @@ const products = [
     subtitletwo: "SBR Latex for repairs & waterproofing",
     description: "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex...",
     images: [{ id: 1, url: product2 }],
-    features: ["Bonding Agent", "Waterproofs concrete", "Improves flexibility", "Durable solution"]
   },
   {
     id: 3,
@@ -244,92 +234,103 @@ const ProductDetails = () => {
                    <li><Link to="#" className="hover:text-yellow-400">CONTACT</Link></li>
                  </ul>
                </nav>
-             </div>
+      </div>
       </header>
 
       {/* PRODUCT DETAILS */}
-      <section id="banner" className=" w-full py-30 px-4 md:px-20">
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#0057A3]">Product Details</h2>
-        <div className="w-28 h-1 bg-[#FFCB05] mx-auto mt-2 mb-12 rounded-full"></div>
+  <section
+  id="banner"
+  className="w-full py-24 px-4 "
+>
+  <div className="mx-auto max-w-[1400px]">
+    <h2 className="text-center text-4xl md:text-5xl font-bold text-[#0057A3] tracking-wide">
+      Product Details
+    </h2>
+    <div className="w-32 h-1 bg-[#FFCB05] mx-auto mt-4 mb-16 rounded-full"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
 
-          {/* LEFT PRODUCT IMAGE */}
-          <div className="flex flex-col items-center">
+      {/* LEFT PRODUCT IMAGE */}
+      <div className="flex flex-col items-center">
 
-  {/* MAIN IMAGE */}
-  <div className="w-full max-w-[400px] h-[500px] flex items-center justify-center bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
-    <img 
-      src={activeImage} 
-      alt="main" 
-      className="object-contain w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-110"
-    />
-  </div>
-
-  {/* 3 THUMBNAIL LOOP (ID: 1,2,3,4,5) */}
-  <div className="flex gap-4 mt-6">
-    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pid) => {
-      const item = products.find((p) => p.id === pid);
-
-      return (
-        <button
-          key={pid}
-          onClick={() => {
-            setProduct(item);                   
-            setActiveImage(item.images[0].url); 
-          }}
-          className={`
-            h-[70px] w-[70px] rounded-xl p-1 bg-white shadow-md border transition-all duration-200
-            ${product.id === item.id
-              ? "border-[#0057A3] shadow-lg"
-              : "border-gray-300 hover:border-[#0057A3]"}
-          `}
-        >
+        {/* MAIN IMAGE */}
+        <div className="w-full max-w-[500px] h-[600px] flex items-center justify-center 
+                        rounded-3xl border border-gray-200 p-6 
+                        overflow-hidden group">
           <img
-            src={item.images[0].url}
-            alt="thumb"
-            className="object-contain h-full w-full"
+            src={activeImage}
+            alt={product.title}
+            className="object-contain w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
           />
-        </button>
-      );
-    })}
-  </div>
+        </div>
 
-  {/* BUTTON */}
-  <button className="mt-6 bg-[#0057A3] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:bg-[#004680] transition">
-    Find a Dealer
-  </button>
-</div>
-
-
-          {/* RIGHT PRODUCT DETAILS */}
-          <div className="w-full">
-            <h3 className="text-2xl md:text-3xl font-semibold text-black">{product.title}</h3>
-            <p className="text-gray-700 mt-1">{product.quantity}</p>
-
-            <button className="bg-[#FFCB05] px-6 py-3 rounded-lg font-semibold mt-6 shadow">
-              Features & Benefits
+        {/* THUMBNAILS */}
+        <div className="flex flex-wrap gap-4 mt-8 justify-center">
+          {products.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => {
+                setProduct(p);
+                setActiveImage(p.images[0].url);
+              }}
+              className={`
+                h-[80px] w-[80px] rounded-xl bg-white p-1 shadow-md border 
+                transition-all duration-200 hover:shadow-xl 
+                ${product.id === p.id ? "border-[#0057A3] shadow-lg scale-105" : "border-gray-300 hover:border-[#0057A3]"}
+              `}
+            >
+              <img
+                src={p.images[0].url}
+                alt={p.title}
+                className="object-contain h-full w-full rounded-lg"
+              />
             </button>
+          ))}
+        </div>
 
-            <div className="mt-6 space-y-4">
-              {product.features?.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#F7F9FC] px-4 py-4 rounded-xl shadow-sm flex items-start gap-3 border border-gray-100"
-                >
-                  {idx === 0 && <FiDroplet className="text-[#0057A3] text-xl mt-1" />}
-                  {idx === 1 && <FiChevronRight className="text-[#0057A3] text-xl mt-1" />}
-                  {idx === 2 && <FiCheck className="text-[#0057A3] text-xl mt-1" />}
-                  {idx === 3 && <FiCheck className="text-[#0057A3] text-xl mt-1" />}
-                  {idx === 4 && <FiHome className="text-[#0057A3] text-xl mt-1" />}
-                  <p className="text-gray-700">{item}</p>
-                </div>
-              ))}
-            </div>
+        {/* BUTTON */}
+        <button className="mt-10 bg-[#0057A3] text-white px-12 py-4 
+                           rounded-2xl font-semibold shadow-lg hover:bg-[#004680] 
+                           hover:shadow-xl transition-all duration-300 tracking-wide text-lg">
+          Find a Dealer
+        </button>
+      </div>
+
+      {/* RIGHT PRODUCT DETAILS */}
+      <div className="mt-8 md:mt-0 lg:pt-[10px]">
+        <div className="space-y-4 text-black">
+          {/* Title */}
+          {product.title && (
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
+              {product.title}
+            </h2>
+          )}
+
+          {/* Product Info */}
+          <div className="space-y-2 pt-3 text-lg">
+            {product.brand && <p><span className="font-semibold">Brand:</span> {product.brand}</p>}
+            {product.category && <p><span className="font-semibold">Category:</span> {product.category}</p>}
+            {product.quantity && <p><span className="font-semibold">Quantity:</span> {product.quantity}</p>}
           </div>
 
+          {/* Availability */}
+          <p className="pt-2 text-lg"><span className="font-semibold text-black">Availability:</span> <span className="text-green-600 font-medium">In Stock</span></p>
+
+          {/* Description */}
+          <div className="pt-6 space-y-3 text-base sm:text-lg leading-relaxed text-gray-700">
+            {product.subtitle && <h3 className="text-xl sm:text-2xl font-semibold">{product.subtitle}</h3>}
+            {product.subtitletwo && <p>{product.subtitletwo}</p>}
+            {product.description && <p>{product.description}</p>}
+            {product.availablePackaging && <p><span className="font-semibold">Available Packaging:</span> {product.availablePackaging}</p>}
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
     </section>
   );
 };

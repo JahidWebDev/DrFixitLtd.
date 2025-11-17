@@ -12,12 +12,12 @@ import Logo from "../../Home-page-images/Logo.jpg";
 import product1 from "../../New-construction-images/Dr-Fixit-Brand-LW+-101-1-Litre.png";
 import product2 from "../../New-construction-images/Dr-Fixit-Brand-Plaster-Master.png";
 import product3 from "../../New-construction-images/Dr-Fixit-Brand-LW-101-30-Litre.png";
-import product4 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
-import product5 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
-import product6 from "../../New-construction-images/Fevilock-500-ml.png";
-import product7 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
-import product8 from "../../New-construction-images/Rust-Remover-01-Litre.png";
-import product9 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
+import product5 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
+import product8 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
+import product9 from "../../New-construction-images/Fevilock-500-ml.png";
+import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
+import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
+import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 
 
 const Newconstruction = () => {
@@ -27,27 +27,27 @@ const Newconstruction = () => {
 
   // Example product data
   const products = [
-  { id: 1, name: "Dr.Proof 101 LW+", category: "Ceiling", type: "repair", imgs: [product1] },
+  { id: 1, name: "Dr.Proof 101 LW+", category: "Ceiling", type: "repair", imgs: [product1], description: "1 Litre Waterproofing Expert"  },
 
-  { id: 2, name: "302 Super Latex", category: "Wall", type: "repair", imgs: [product9] },
+  { id: 2, name: "302 Super Latex", category: "Wall", type: "repair", imgs: [product12], description: "1 Litre Waterproofing Expert" },
 
-  { id: 3, name: "New Construction Proof", category: "Ceiling", type: "repair", imgs: [product1] },
+  { id: 3, name: "New Construction Proof", category: "Ceiling", type: "repair", imgs: [product1], description: "1 Litre Waterproofing Expert" },
 
-  { id: 4, name: "Ultra Seal 200", category: "Wall", type: "new", imgs: [product4] },
+  { id: 4, name: "Ultra Seal 200", category: "Wall", type: "new", imgs: [product1], description: "1 Litre Waterproofing Expert" },
 
-  { id: 5, name: "FixIt Strong", category: "Ceiling", type: "repair", imgs: [product3] },
+  { id: 5, name: "FixIt Strong", category: "Ceiling", type: "repair", imgs: [product3], description: "1 Litre Waterproofing Expert" },
 
-  { id: 6, name: "Fevilock 500 ML", category: "Wall", type: "repair", imgs: [product6] },
+  { id: 6, name: "Fevilock 500 ML", category: "Wall", type: "repair", imgs: [product8], description: "1 Litre Waterproofing Expert" },
 
-  { id: 7, name: "Dr. Fixit Exterior Sealer 5100", category: "Wall", type: "repair", imgs: [product3] },
+  { id: 7, name: "Dr. Fixit Exterior Sealer 5100", category: "Wall", type: "repair", imgs: [product3], description: "1 Litre Waterproofing Expert" },
 
-  { id: 8, name: "Rust Remover", category: "Wall", type: "repair", imgs: [product8] },
+  { id: 8, name: "Rust Remover", category: "Wall", type: "repair", imgs: [product8], description: "1 Litre Waterproofing Expert" },
 
-  { id: 9, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product5] },
-  { id: 10, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product2] },
-  { id: 11, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product5] },
-  { id: 12, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product7] },
-  { id: 13, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product9] },
+  { id: 9, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product5], description: "1 Litre Waterproofing Expert" },
+  { id: 10, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product2], description: "1 Litre Waterproofing Expert" },
+  { id: 11, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product10], description: "1 Litre Waterproofing Expert" },
+  { id: 12, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product11], description: "1 Litre Waterproofing Expert" },
+  { id: 13, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product9], description: "1 Litre Waterproofing Expert" },
 ];
 
 
@@ -206,144 +206,167 @@ const Newconstruction = () => {
           </nav>
         </div>
       </header>
-     <section className="bg-gray-50 py-30 px-4 md:px-8 lg:px-12">
-      <div className="max-w-[1500px] mx-auto w-full">
-        {/* Tabs */}
- <div className="flex flex-wrap justify-center mb-8 gap-x-4">
-  {["repair", "new"].map((tab) => (
-    <button
-      key={tab}
-      onClick={() => handleTabClick(tab)}
-      className={`px-6 py-3 text-sm md:text-base border font-semibold transition-all rounded-t-lg ${
-        activeTab === tab
-          ? "bg-yellow-400 text-black shadow-md"
-          : "bg-white hover:bg-gray-100 text-gray-700"
-      } ${tab === "repair" ? "rounded-l-lg" : "rounded-r-lg"}`}
-    >
-      {tab === "repair" ? "Repair | Renovate" : "New Construction"}
-    </button>
-  ))}
-</div>
+     <section className="py-30 px-4 md:px-8 lg:px-12">
+  <div className="max-w-[1500px] mx-auto w-full">
 
+    {/* Tabs */}
+    <div className="flex flex-wrap justify-center mb-8 gap-x-4">
+      {["repair", "new"].map((tab) => (
+        <button
+          key={tab}
+          onClick={() => handleTabClick(tab)}
+          className={`px-6 py-3 text-sm md:text-base border font-semibold transition-all rounded-t-lg 
+            ${
+              activeTab === tab
+                ? "bg-yellow-400 text-black shadow-md"
+                : "bg-white hover:bg-gray-100 text-gray-700"
+            }
+            ${tab === "repair" ? "rounded-l-lg" : "rounded-r-lg"}
+          `}
+        >
+          {tab === "repair" ? "Repair | Renovate" : "New Construction"}
+        </button>
+      ))}
+    </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Sidebar Filter */}
-          <aside className="md:col-span-1 
-                  rounded-2xl shadow-xl p-6 border border-gray-200 w-full max-w-[300px] h-[350px] 
-                  bg-gradient-to-b from-blue-100 via-blue-50 to-white">
-            <h3 className="text-lg font-bold text-blue-800 text-center mb-6">
-              Where is the leakage?
-            </h3>
+    {/* Grid Layout */}
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-  <div className="flex flex-col space-y-3 text-sm md:text-base">
-  {leakageOptions.map((option) => {
-    const isActive = selectedLeakage === option; // check if this option is selected
-    return (
-      <label
-        key={option}
-        className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all
-          ${isActive 
-            ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white" 
-            : "bg-blue-100 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 group"
-          }`}
-      >
-        <input
-          type="radio"
-          name="leakage"
-          value={option}
-          checked={isActive}
-          onChange={(e) => setSelectedLeakage(e.target.value)}
-          className="accent-blue-600 scale-125"
-        />
-        <span className={`font-medium ${isActive ? "text-white" : "text-gray-900 group-hover:text-white"}`}>
-          {option}
-        </span>
-      </label>
-    );
-  })}
-</div>
+      {/* Sidebar Filter */}
+      <aside className="md:col-span-1 ju rounded-2xl shadow-xl p-6 border border-gray-200 
+                        w-full max-w-[300px] h-[350px] 
+                        bg-gradient-to-b from-blue-100 via-blue-50 to-white">
 
+        <h3 className="text-lg font-bold text-blue-800 text-center mb-6">
+          Where is the leakage?
+        </h3>
 
+        <div className="flex flex-col space-y-3 text-sm md:text-base">
+          {leakageOptions.map((option) => {
+            const isActive = selectedLeakage === option;
 
+            return (
+              <label
+                key={option}
+                className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all
+                  ${
+                    isActive
+                      ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white"
+                      : "bg-blue-100 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 group"
+                  }`}
+              >
+                <input
+                  type="radio"
+                  name="leakage"
+                  value={option}
+                  checked={isActive}
+                  onChange={(e) => setSelectedLeakage(e.target.value)}
+                  className="accent-blue-600 scale-125"
+                />
 
-          </aside>
-
-          {/* Main Content */}
-          <main className="md:col-span-3">
-            {/* Search Bar */}
-<div className="flex justify-center mb-15 relative w-full md:w-1/2 mx-auto mr-1">
-  <input
-    type="text"
-    placeholder="Search products..."
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    className="w-full pl-10 pr-5 border border-gray-300 focus:border-blue-500 rounded-full py-3 shadow-sm focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white"
-  />
-  <FiSearch
-    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-    size={20}
-  />
-</div>
-
-
-
-
-
-            {/* Product Grid */}
-            {filteredProducts.length > 0 ? (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProducts.map((p) => (
-                  <div
-                    key={p.id}
-                    className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-<div className="h-56 w-full flex items-start justify-center pb-2 overflow-hidden">
-  {p.imgs?.map((imgSrc, idx) => (
-    <LazyLoadImage
-      key={idx}
-      src={imgSrc}
-      alt={`${p.name} ${idx + 1}`}
-      effect="blur"
-      className="
-        h-60 w-auto object-contain 
-        mt-3                     /* slight down from top */
-        transition-transform duration-500 ease-out
-        hover:scale-110         /* smooth zoom */
-      "
-    />
-  ))}
-</div>
-
-                    <h3 className="mt-4 text-lg font-semibold text-center text-gray-900">
-                      {p.name}
-                    </h3>
-
-                    <div className="mt-5 w-full flex flex-col gap-3 text-center">
-                       <Link
-                        to={`/productdetails/${p.id}`}
-                        state={{ showBanner: true }}
-                        className="
-                      border border-blue-700 text-blue-700 font-medium py-2 rounded-full hover:bg-blue-700 hover:text-white transition-all"
-                      >
-                        Product Details
-                      </Link>
-                      <button className="bg-yellow-400 text-black font-medium py-2 rounded-full hover:bg-yellow-500 transition-all">
-                        Find a Dealer
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-center text-gray-500 mt-12 text-lg">
-                No products found for this selection.
-              </p>
-            )}
-          </main>
+                <span
+                  className={`font-medium 
+                    ${isActive ? "text-white" : "text-gray-900 group-hover:text-white"}`}
+                >
+                  {option}
+                </span>
+              </label>
+            );
+          })}
         </div>
-      </div>
-    </section>
+      </aside>
+
+      {/* Main Content */}
+      <main className="md:col-span-3">
+
+        {/* Search Bar */}
+<div className="flex mt-7 mb-16 relative w-full md:w-1/3 ml-auto">
+  <div className="relative w-full">
+    <input
+      type="text"
+      placeholder="Search products..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      className="w-full pl-10 pr-5 border border-gray-500 rounded-[16px] py-3
+                 shadow-md text-black placeholder-gray-500
+                 focus:border-blue-500 focus:ring-2 focus:ring-blue-100
+                 outline-none transition-all bg-white"
+    />
+    <FiSearch
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-black"
+      size={20}
+    />
+  </div>
+</div>
+
+
+
+
+        {/* Product Grid */}
+  {filteredProducts.length > 0 ? (
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+    {filteredProducts.map((p, index) => {
+      const small = index < 2;
+      const imgHeight = small ? "h-40" : "h-60";
+      const hoverScale = small ? "hover:scale-105" : "hover:scale-110";
+
+      return (
+        <div
+          key={p.id}
+          className="border-[2px] border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:scale-[1.02] bg-white"
+        >
+          {/* Image */}
+          <div className="flex justify-center items-end w-full h-[260px] border-b-[2px] border-gray-200 rounded-t-2xl mt-5 group transition-all duration-300">
+            {p.imgs?.map((imgSrc, idx) => (
+              <LazyLoadImage
+                key={idx}
+                src={imgSrc}
+                alt={`${p.name} ${idx + 1}`}
+                effect="blur"
+                className={`object-contain w-auto transition-transform duration-300 group-hover:scale-105 ${imgHeight}`}
+              />
+            ))}
+          </div>
+
+          {/* Product Info */}
+          <div className="p-5 flex flex-col flex-grow justify-between text-center">
+            <h3 className="text-[17px] font-bold text-[#222] mb-1 leading-[1.1]">
+              {p.name}
+            </h3>
+           <p className="text-[14px] text-gray-600 mb-6 leading-[1.4]">
+  {p.description}
+</p>
+          </div>
+
+          {/* Buttons */}
+          <div className="px-5 pb-5 flex flex-col gap-2 mt-auto">
+           <Link
+  to={`/productdetails/${p.id}`}
+  state={{ showBanner: true }}
+  className="border border-blue-700 text-blue-700 text-[15px] font-medium py-2 px-4 rounded-md hover:bg-blue-700 hover:text-white transition-all duration-300 text-center inline-block"
+>
+  Product Details
+</Link>
+
+            <button className="bg-yellow-400 text-black text-[15px] font-medium py-2 rounded-md shadow-sm hover:bg-yellow-500 transition-all duration-300 text-center">
+              Find a Dealer
+            </button>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+) : (
+  <p className="text-center text-gray-500 mt-12 text-lg">
+    No products found for this selection.
+  </p>
+)}
+
+      </main>
+    </div>
+  </div>
+</section>
+
 
     </section>
   );
