@@ -26,29 +26,22 @@ const Newconstruction = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Example product data
-  const products = [
-  { id: 1, name: "Dr.Proof 101 LW+", category: "Ceiling", type: "repair", imgs: [product1], description: "1 Litre Waterproofing Expert"  },
-
-  { id: 2, name: "302 Super Latex", category: "Wall", type: "repair", imgs: [product12], description: "1 Litre Waterproofing Expert" },
-
-  { id: 3, name: "New Construction Proof", category: "Ceiling", type: "repair", imgs: [product1], description: "1 Litre Waterproofing Expert" },
-
-  { id: 4, name: "Ultra Seal 200", category: "Wall", type: "new", imgs: [product1], description: "1 Litre Waterproofing Expert" },
-
-  { id: 5, name: "FixIt Strong", category: "Ceiling", type: "repair", imgs: [product3], description: "1 Litre Waterproofing Expert" },
-
-  { id: 6, name: "Fevilock 500 ML", category: "Wall", type: "repair", imgs: [product8], description: "1 Litre Waterproofing Expert" },
-
-  { id: 7, name: "Dr. Fixit Exterior Sealer 5100", category: "Wall", type: "repair", imgs: [product3], description: "1 Litre Waterproofing Expert" },
-
-  { id: 8, name: "Rust Remover", category: "Wall", type: "repair", imgs: [product8], description: "1 Litre Waterproofing Expert" },
-
-  { id: 9, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product5], description: "1 Litre Waterproofing Expert" },
-  { id: 10, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product2], description: "1 Litre Waterproofing Expert" },
-  { id: 11, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product10], description: "1 Litre Waterproofing Expert" },
-  { id: 12, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product11], description: "1 Litre Waterproofing Expert" },
-  { id: 13, name: "302 Super Latex (1 Litre)", category: "Wall", type: "repair", imgs: [product9], description: "1 Litre Waterproofing Expert" },
+const products = [
+  { id: 1, name: "Dr Fixit Brand LW 101",category: "Wall", type: "repair", imgs: [product1], description: "1 Liter Waterproofing Expert" },
+  { id: 2, name: "Dr Fixit Brand 302 Super Latex",category: "Wall", type: "repair", imgs: [product12], description: "1 Liter Waterproofing Expert" },
+  { id: 3, name: "Dr. Fixit Brand LW+ 101",category: "Wall", type: "repair", imgs: [product1], description: "05 Liter Waterproofing Expert" },
+  { id: 4, name: "Dr Fixit Brand 302 Super Latex",category: "Wall", type: "repair", imgs: [product12], description: "05 Liter Waterproofing Expert" },
+  { id: 5, name: "Dr Fixit Brand LW 101",category: "Wall", type: "repair", imgs: [product3], description: "18 Liter Waterproofing Expert" },
+  { id: 6, name: "Dr Fixit Brand 302 Super Latex",category: "Wall", type: "repair", imgs: [product8], description: "18 Liter Waterproofing Expert" },
+  { id: 7, name: "Dr. Fixit Brand LW+ 101",category: "Wall", type: "repair", imgs: [product3], description: "30 Liter Waterproofing Expert" },
+  { id: 8, name: "Dr Fixit Brand 302 Super Latex",category: "Wall", type: "repair", imgs: [product8], description: "18 Liter Waterproofing Expert" },
+  { id: 9, name: "Dr Fixit Brand 5400 Interior Sealer", type: "repair", category: "Sealer", imgs: [product5], description: "18 Liter Paint Expert" },
+  { id: 10, name: "Dr Fixit Brand Plaster Master",category: "Wall", type: "repair", imgs: [product2], description: "18 Liter Plaster Expert" },
+  { id: 11, name: "Dr Fixit Brand 5100 Exterior Sealer", type: "repair", category: "Sealer", imgs: [product10], description: "18 Liter Paint Expert" },
+  { id: 12, name: "Dr Fixit Brand Rust Remover", type: "repair", category: "Cleaner", imgs: [product11], description: "1 Liter Muilti-Purpase Rust Remover" },
+  { id: 13, name: "Dr Fixit Brand Fevilock", type: "repair", category: "Glue", imgs: [product9], description: "500ml Liter Bonding Expert" },
 ];
+
 
 
   // Leakage options (same for all tabs, can be customized per tab)
@@ -307,7 +300,7 @@ const Newconstruction = () => {
   <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
     {filteredProducts.map((p, index) => {
       const small = index < 2;
-      const imgHeight = small ? "h-40" : "h-60";
+      const imgHeight = small ? "h-50" : "h-60";
       const hoverScale = small ? "hover:scale-105" : "hover:scale-110";
 
       return (

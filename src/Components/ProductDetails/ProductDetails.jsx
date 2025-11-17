@@ -4,7 +4,6 @@ import { FiDroplet, FiChevronRight, FiCheck, FiHome } from "react-icons/fi";
 
 import img1 from "../../New-construction-images/download.jpg";
 import Logo from "../../Home-page-images/Logo.jpg";
-
 import product1 from "../../New-construction-images/Dr-Fixit-Brand-LW+-101-1-Litre.png";
 import product2 from "../../New-construction-images/Dr-Fixit-Brand-Plaster-Master.png";
 import product3 from "../../New-construction-images/Dr-Fixit-Brand-LW-101-30-Litre.png";
@@ -14,6 +13,7 @@ import product9 from "../../New-construction-images/Fevilock-500-ml.png";
 import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
+
 const products = [
   {
     id: 1,
@@ -57,7 +57,7 @@ const products = [
     quantity: "5 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product4 }],
+    images: [{ id: 1, url: product1 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
   {
@@ -79,7 +79,7 @@ const products = [
     quantity: "5 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product6 }],
+    images: [{ id: 1, url: product2 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
   {
@@ -90,7 +90,7 @@ const products = [
     quantity: "5 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product7 }],
+    images: [{ id: 1, url: product2 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
   {
@@ -101,7 +101,7 @@ const products = [
     quantity: "5 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product8 }],
+    images: [{ id: 1, url: product2 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
   {
@@ -113,6 +113,39 @@ const products = [
     subtitle: "Dr. Fixit Drproof LW+",
     description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
     images: [{ id: 1, url: product9 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 10,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product10 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 11,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product11 }],
+    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+  },
+  {
+    id: 12,
+    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "5 Litre",
+    subtitle: "Dr. Fixit Drproof LW+",
+    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
+    images: [{ id: 1, url: product12 }],
     features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
   },
   
