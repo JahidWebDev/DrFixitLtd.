@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { FiDroplet, FiChevronRight, FiCheck, FiHome } from "react-icons/fi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import img1 from "../../New-construction-images/download.jpg";
 import Logo from "../../Home-page-images/Logo.jpg";
@@ -10,7 +12,7 @@ import product3 from "../../New-construction-images/Dr-Fixit-Brand-LW-101-30-Lit
 import product5 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior-Wall-Selaer.png";
 import product8 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
 import product9 from "../../New-construction-images/Fevilock-500-ml.png";
-import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
+import product10 from "../../New-construction-images/Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 
@@ -23,21 +25,25 @@ const products = [
     quantity: "1 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
     subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
-    description: "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound...",
+    description:
+      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster. The compound enhances the cohesiveness of concrete, reduces segregation minimizes shrinkage cracks, and provides superior waterproofing and durability to structures.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product1 }],
   },
+
   {
     id: 2,
-    title: "1kg Dr. Fixit 302 Super Latex-Premium | SBR Waterproofing & Bonding Agent",
+    title: "1kg Dr. Fixit 302 Super Latex-Premium | SBR Waterproofing & Bonding Agent for Concrete Repair",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
     quantity: "1 Litre",
     subtitle: "Dr. Fixit 302 Super Latex",
     subtitletwo: "SBR Latex for repairs & waterproofing",
-    description: "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex...",
-    images: [{ id: 1, url: product2 }],
+    description:
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation enhances the strength, flexibility, and water resistance of cementitious mixes, making it an ideal solution for long-lasting repairs and surface protection.",
+    images: [{ id: 1, url: product12 }],
   },
+
   {
     id: 3,
     title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
@@ -45,111 +51,149 @@ const products = [
     category: "Admixture",
     quantity: "5 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product3 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
+    description:
+      "Integral Liquid Waterproofing Compound for Concrete & Plaster. Dr. Fixit Drproof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product1 }],
   },
+
   {
     id: 4,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "5kg Dr. Fixit 302 Super Latex-Premium | SBR Waterproofing & Bonding Agent for Concrete Repair",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
     quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product1 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    subtitle: "Dr. Fixit 302 Super Latex",
+    subtitletwo: "SBR Latex for repairs & waterproofing",
+    description:
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation enhances the strength, flexibility, and water resistance of cementitious mixes.",
+    images: [{ id: 1, url: product12 }],
   },
+
   {
     id: 5,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "18kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
-    quantity: "5 Litre",
+    quantity: "18 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product5 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
+    description:
+      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It enhances cohesiveness, reduces shrinkage cracks, and provides superior waterproofing.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product3 }],
   },
+
   {
     id: 6,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "30kg Dr. Fixit 302 Super Latex-Premium SBR Waterproofing & Bonding Agent for Concrete Repair",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product2 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    quantity: "30 Litre",
+    subtitle: "Dr. Fixit 302 Super Latex",
+    subtitletwo: "SBR Latex for repairs & waterproofing",
+    description:
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair. It enhances strength, flexibility, and water resistance of cement mixes.",
+    images: [{ id: 1, url: product8 }],
   },
+
   {
     id: 7,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "30kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
-    quantity: "5 Litre",
+    quantity: "30 Litre",
     subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product2 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
+    description:
+      "Dr. Fixit Dr.proof LW+ is a specially formulated waterproofing compound that reduces cracking, increases durability, and improves concrete quality.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product3 }],
   },
+
   {
     id: 8,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "30kg Dr. Fixit 302 Super Latex-Premium SBR Waterproofing & Bonding Agent",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product2 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    quantity: "30 Litre",
+    subtitle: "Dr. Fixit 302 Super Latex",
+    subtitletwo: "SBR Latex for repairs & waterproofing",
+    description:
+      "High-quality SBR waterproofing and bonding agent ideal for concrete repairs, increasing adhesion, and enhancing waterproofing performance.",
+    images: [{ id: 1, url: product8 }],
   },
+
   {
     id: 9,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "18kg Dr. Fixit 5400 Interior Wall Sealer - Water-Based Primer",
     brand: "Dr. Fixit Limited",
-    category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product9 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    category: "Paints",
+    quantity: "18 Litre",
+    subtitle: "Dr. Fixit 5400 Interior Wall Sealer",
+    subtitletwo: "Excellent Finish Leveling",
+    description:
+      "A high-quality water-based primer for interior walls. Seals porous surfaces, improves paint adhesion, and ensures a smooth, durable finish.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product5 }],
   },
+
   {
     id: 10,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "1 Litre Dr. Fixit 302 Super Latex-Premium SBR Waterproofing & Bonding Agent",
     brand: "Dr. Fixit Limited",
     category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product10 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    quantity: "1 Litre",
+    subtitle: "Dr. Fixit 302 Super Latex",
+    subtitletwo: "SBR Latex for repairs & waterproofing",
+    description:
+      "A premium SBR latex additive for waterproofing and bonding. Enhances durability, flexibility, and water resistance of cement mixes.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product2 }],
   },
+
   {
     id: 11,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "18kg Dr. Fixit 5100 Exterior Wall Sealer - Water-Based Primer",
     brand: "Dr. Fixit Limited",
-    category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product11 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    category: "Paints",
+    quantity: "18 Litre",
+    subtitle: "Dr. Fixit 5100 Exterior Wall Sealer",
+    subtitletwo: "Excellent Finish Leveling",
+    description:
+      "High-performance water-based sealer for exterior walls. Provides moisture protection, increases durability, and enhances finishing coat performance.",
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product10 }],
   },
+
   {
     id: 12,
-    title: "5kg Water Proofing & Water-Reducing Admixture, LW+ 101 Dr Fixit Brand",
+    title: "1kg Dr. Fixit Multi Purpose Rust Remover",
     brand: "Dr. Fixit Limited",
-    category: "Admixture",
-    quantity: "5 Litre",
-    subtitle: "Dr. Fixit Drproof LW+",
-    description: "Integral Liquid Waterproofing Compound for Concrete & Plaster...",
-    images: [{ id: 1, url: product12 }],
-    features: ["Waterproofs concrete", "Improves workability", "Avoids cracking", "Durable"]
+    category: "Rust Remover",
+    quantity: "1 Kg",
+    subtitle: "Dr. Fixit Rust Remover - Multi-Purpose",
+    description:
+      "A powerful chemical solution that removes rust, corrosion, and iron oxide deposits from metal tools and construction equipment.",
+    availablePackaging: "5ml, 1 litre, and 5 litre",
+    images: [{ id: 1, url: product11 }],
   },
-  
+
+  {
+    id: 13,
+    title: "Fevilock – Premium Synthetic Resin Adhesive (Glue) – 250 gm",
+    brand: "Dr. Fixit Limited",
+    category: "Glue",
+    quantity: "250 gm",
+    subtitle: "Fevilock (Glue) - Premium Synthetic Resin Adhesive",
+    description:
+      "A high-quality, water-based resin adhesive for wood, paper, cardboard, and more. Ideal for home, school, and office use.",
+    availablePackaging: "20gm, 50gm, 100gm, 200gm, and 250gm",
+    images: [{ id: 1, url: product9 }],
+  },
 ];
+
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -287,15 +331,19 @@ const ProductDetails = () => {
       <div className="flex flex-col items-center">
 
         {/* MAIN IMAGE */}
-        <div className="w-full max-w-[500px] h-[600px] flex items-center justify-center 
-                        rounded-3xl border border-gray-200 p-6 
-                        overflow-hidden group">
-          <img
-            src={activeImage}
-            alt={product.title}
-            className="object-contain w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-        </div>
+<div
+  className="w-full max-w-[500px] h-[600px] flex items-center justify-center 
+             rounded-3xl border border-gray-200 p-6 
+             overflow-hidden group bg-white"
+>
+  <LazyLoadImage
+    src={activeImage}
+    alt={product.title}
+    effect="blur"
+    className="object-contain w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+  />
+</div>
+
 
         {/* THUMBNAILS */}
         <div className="flex flex-wrap gap-4 mt-8 justify-center">
