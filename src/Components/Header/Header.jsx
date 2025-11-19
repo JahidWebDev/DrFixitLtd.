@@ -49,7 +49,7 @@ const Header = () => {
   if (email) body += `Email: ${email}%0A`;
   if (location) body += `Location: ${location}%0A`;
 
-  window.location.href = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
+  window.location.to = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
 
   setDealerSuccess(true);
   setTimeout(() => setDealerSuccess(false), 3000);
@@ -70,7 +70,7 @@ const Header = () => {
     if (email) body += `Email: ${email}%0A`;
     if (location) body += `Location: ${location}%0A`;
 
-    window.location.href = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
+    window.location.to = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
     setContactSuccess(true);
     setTimeout(() => setContactSuccess(false), 3000);
   };
@@ -122,7 +122,7 @@ const Header = () => {
       >
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="#" className="shrink-0">
+          <Link to="#" className="shrink-0">
          <img
   className="h-12 md:h-16"
   src={Logo}
@@ -193,22 +193,22 @@ const Header = () => {
 
   {/* Other links */}
   <li>
-    <Link href="#" className="hover:text-yellow-400">
-      RESOURCE
+    <Link to="/about-us" className="hover:text-yellow-400">
+      ABOUT US
     </Link>
   </li>
   <li>
-    <Link href="#" className="hover:text-yellow-400">
+    <Link to="#" className="hover:text-yellow-400">
       CERTIFICATE
     </Link>
   </li>
   <li>
-    <Link href="#" className="hover:text-yellow-400">
-      TEAM
+    <Link to="#" className="hover:text-yellow-400">
+      RESOURCE
     </Link>
   </li>
   <li>
-    <Link href="#" className="hover:text-yellow-400">
+    <Link to="contact" className="hover:text-yellow-400">
       CONTACT
     </Link>
   </li>
@@ -240,27 +240,27 @@ const Header = () => {
             <div className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-20 md:hidden">
               <ul className="space-y-4 text-gray-800">
                 <li>
-                  <Link href="#" className="block hover:text-yellow-400        ">
+                  <Link to="#" className="block hover:text-yellow-400        ">
                     PRODUCTS
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block hover:text-yellow-400        ">
+                  <Link to="#" className="block hover:text-yellow-400        ">
                     RESOURCE
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block hover:text-yellow-400        ">
+                  <Link to="#" className="block hover:text-yellow-400        ">
                     CERTIFICATE
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block hover:text-yellow-400        ">
+                  <Link to="#" className="block hover:text-yellow-400        ">
                     TEAM
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block hover:text-yellow-400        ">
+                  <Link to="/contact" className="block hover:text-yellow-400        ">
                     CONTACT
                   </Link>
                 </li>
