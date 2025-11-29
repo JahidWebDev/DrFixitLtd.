@@ -9,12 +9,14 @@ import RepairConstruction from "./Components/RepairConstruction/RepairConstructi
 import Remover from "./Components/Remover/Remover";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Contactus from "./Components/Contactus/Contactus";
+import ShippingPolicy from "./Components/ShippingPolicy/ShippingPolicy";
+import RefundPolicy from "./Components/RefundPolicy/refundpolicy";
 
 
 function Home() {
   return (
     <>
-      <Header />
+     <Header />
      <Waterproofing/>
     </>
   );
@@ -32,6 +34,8 @@ function App() {
         <Route path="/remover" element={<Remover/>} />
          <Route path="/about-us" element={<AboutUs />} />
          <Route path="/contact" element={<Contactus />} />
+         <Route path="/shipping-policy" element={<ShippingPolicy/>} />
+         <Route path="/refund-policy" element={<RefundPolicy/>} />
       </Routes>
       <Footer />
     </Router>

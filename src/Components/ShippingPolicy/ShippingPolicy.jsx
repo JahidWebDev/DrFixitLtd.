@@ -16,7 +16,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link, NavLink } from "react-router-dom";
 
 
-const Header = () => {
+const ShippingPolicy = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -51,24 +51,11 @@ useEffect(() => {
 }, [activeSlide]);
 
 
-  // Contact Form (mailto)
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    const name = encodeURIComponent(e.target.name.value.trim());
-    const mobile = encodeURIComponent(e.target.mobile.value.trim());
-    const email = encodeURIComponent(e.target.email.value.trim());
-    const location = encodeURIComponent(e.target.dlocation.value.trim());
 
-    let subject = encodeURIComponent("Call Back Request from Website");
-    let body = `Hi! I would like a call back.%0AName: ${name}%0AMobile: ${mobile}%0A`;
-    if (email) body += `Email: ${email}%0A`;
-    if (location) body += `Location: ${location}%0A`;
-
-    window.location.href = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
-  };
 
   return (
-    <header className="relative min-h-screen overflow-hidden">
+    <section>
+        <header className="relative min-h-screen overflow-hidden">
 
       {/* Background Image + Video Fader */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
@@ -88,14 +75,13 @@ useEffect(() => {
       />
     ) : (
       <LazyLoadImage
-        key={i}
-        src={slide.src}
-        alt="hero-slide"
-       
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${
-          isActive ? "opacity-100" : "opacity-0"
-        }`}
-      />
+  key={i}
+  src={slide.src}
+  alt="hero-slide"
+  className={`absolute inset-0 w-full h-full object-cover  duration-[1500ms] 
+    brightness-110 ${isActive ? "opacity-100" : "opacity-0"}`}
+ />
+
     );
   })}
 
@@ -183,27 +169,78 @@ useEffect(() => {
       </div>
 
       {/* Content Section */}
-      <div className="relative z-10 mx-auto px-8 grid md:grid-cols-2 gap-10 items-center mt-10 md:mt-15 md:ml-[200px] md:mr-0" > {/* Left Text Section */} 
-        <div className="text-white justify-end space-y-6 md:pr-0.5"> 
-          <h2 className="text-3xl md:text-3xl font-semibold leading-snug"> 
-            <span className="text-yellow-300 font-bold">DR. FIXIT LTD. 
-              </span> offers Link comprehensive range of products to meet all your waterproofing needs </h2> 
-              <div className="flex flex-wrap gap-6 text-xl font-semibold mt-4"> 
-                <div className="flex items-center space-x-2"> <FaWater className="text-yellow-300 text-2xl" /> 
-                <span>Waterproofing</span> 
-                </div> 
-                <div className="flex items-center space-x-2"> <GiBrickWall className="text-yellow-300 text-2xl" /> 
-                <span>Damp Protect</span> </div> 
-                <div className="flex items-center space-x-2"> <FaShieldAlt className="text-yellow-300 text-2xl" /> 
-                <span>Excellent Durability</span> </div> </div> <div> <form onSubmit={handleContactSubmit} className="bg-white/15 ml-7 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-2xl space-y-4 text-white md:w-[680px] mx-auto mt-10" > <h2 className="text-center text-2xl font-semibold pb-7 text-white"> Reach Out to Our Team </h2> <div className="grid grid-cols-1 md:grid-cols-2 gap-3"> {/* Name */} <div className="relative"> <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" /> <input type="text" name="name" placeholder="Name" className="pl-10 p-3 text-[17px] rounded-md bg-white/10 border border-white/30 placeholder-white/80 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" required /> </div> {/* Mobile */} <div className="relative"> <FaPhoneAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" /> <input type="tel" name="mobile" placeholder="Mobile" className="pl-10 p-3 text-[17px] rounded-md bg-white/10 border border-white/30 placeholder-white/80 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" required /> </div> {/* Email */} <div className="relative"> <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" /> <input type="email" name="email" placeholder="E-mail" className="pl-10 p-3 text-[17px] rounded-md bg-white/10 border border-white/30 placeholder-white/80 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" /> </div> {/* Location */}
-               <div className="relative"> <FaMapMarkerAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" /> <input type="text" name="dlocation" placeholder="District/Upazila" className="pl-10 p-3 text-[17px] rounded-md bg-white/10 border border-white/30 placeholder-white/80 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" /> </div> </div> <div className="flex items-start space-x-2 mt-3"> <input type="checkbox" className="mt-1 accent-yellow-400" /> <p className="text-sm text-white/90"> I consent to receiving calls based on the information provided above. </p> </div> <button type="submit" className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-8 rounded-md mt-4 transition-all ml-2 md:ml-4" > Please Return My Call </button> </form> {/* Bottom Info */} <div className="mt-10 text-left overflow-hidden"> <div className="inline-block animate"> <p className="inline-flex items-center gap-2 bg-yellow-400 text-black font-semibold px-5 py-2 rounded-full shadow-md"> <div className="flex items-center">
-  <span className="text-black">Dr. Fixit Ltd. Advice Centre</span>
-  <span className="text-[#111] text-[18px] font-bold ml-1">+8801788360303</span>
-</div> 
-               </p> </div> </div> </div> </div> </div>
+      
+        
+         
 
     </header>
+   <section className="py-16 md:px-12 lg:px-24">
+  <div className="max-w-6xl mx-auto rounded-2xl p-8 md:p-12 text-black">
+    
+    {/* Heading */}
+    <h1 className="text-4xl md:text-5xl font-bold mb-12">
+      Shipping Policy
+    </h1>
+
+    {/* Policy Description */}
+    <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+      <p>Dr. Fixit Limited Shipping Policy for Bangladesh.</p>
+      <p>International Reach: We currently sell products in the United States. We do not offer worldwide shipping at this time.</p>
+      <p><strong>Shipping Charge and Time:</strong></p>
+      <p>Delivery Time: Handling time + Transit time</p>
+      <p>Handling Time: 1-2 business days (Monday to Friday)</p>
+      <p>Order cut-off time: 5 PM (GMT+06:00) Dhaka Standard Time (Asia)</p>
+      <p>All products go through a production process; therefore, there will be a handling time.</p>
+    </div>
+
+    {/* Shipping Table */}
+    <div className="overflow-x-auto mt-8">
+      <table className="w-full text-left border border-gray-300 rounded-lg text-lg md:text-xl">
+        <thead className="bg-black">
+          <tr>
+            <th className="px-6 py-3 font-medium text-white">Shipping Rate Name</th>
+            <th className="px-6 py-3  font-medium text-white">Transit Time</th>
+            <th className="px-6 py-3  font-medium text-white">Shipping Fee</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white">
+          <tr className="hover:bg-gray-50">
+            <td className="px-6 py-4 ">Standard</td>
+            <td className="px-6 py-4 ">2 to 3 business days</td>
+            <td className="px-6 py-4 ">Free</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {/* Tracking Info */}
+    <div className="mt-6 text-lg md:text-xl leading-relaxed">
+      <p>Tracking: We offer tracking so you can follow its journey until it reaches you.</p>
+      <p>Happy shopping, and keep those smiles coming!</p>
+    </div>
+
+    {/* Contact Information */}
+    <div className="mt-12  pt-6 space-y-2 text-lg md:text-xl">
+      <h3 className="text-xl md:text-2xl  font-semibold">Contact Information:</h3>
+      <p>Phone: +880 1898-795771</p>
+      <p>Email: <a href="mailto:support@fixitgroupbd.com" className="text-black ">support@fixitgroupbd.com</a></p>
+      <p>Address: House No. 09, Road No. 02, Block-C, Rampura Banasree, Dhaka-1219.</p>
+
+      <h3 className="text-xl md:text-2xl font-semibold mt-12">Support Hours:</h3>
+      <p>Monday to Friday: 10:00 AM to 5:00 PM</p>
+
+      <h3 className="text-xl md:text-2xl font-semibold mt-12">Company Information:</h3>
+      <p>Company Name: Dr. Fixit Limited</p>
+      <p>Company Reg No: C-196176</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+    </section>
   );
 };
 
-export default Header;
+export default ShippingPolicy;

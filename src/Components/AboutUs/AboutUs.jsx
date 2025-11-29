@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import img4 from "../../AboutUs-images/Fixit-Group-About-us.png";
-
+import fixitHelmet from "../../New-construction-images/Biulding-&-Cap.png";
 import logo from "../../Home-page-images/Logo.jpg";
 
 import logo5 from "../../AboutUs-images/Fixit-Group-Logo-Black-&-White.png";
@@ -30,12 +30,11 @@ const AboutUs = () => {
   return (
     <section className="relative">
       {/* ================== Banner Section ================== */}
-    <div className="relative h-[60vh] sm:h-[68vh] md:h-[76vh] lg:h-[76vh] overflow-hidden" aria-label="Hero background">
+ <div className="relative w-full h-screen overflow-hidden" aria-label="Hero background">
   {/* Lazy Background Image */}
   <LazyLoadImage
     src={img4}
     alt="Hero Background"
-    
     className="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -103,122 +102,80 @@ const AboutUs = () => {
   </div>
 
   {/* Banner Content */}
-  <div className="absolute inset-0 flex items-center justify-center text-white text-center px-4">
-    <div>
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to Fixit Group</h1>
-      <p className="text-base md:text-xl max-w-2xl mx-auto">
-        Building a stronger, smart Bangladesh through innovation, quality, and trust.
-      </p>
-    </div>
+<div className="absolute inset-0 flex items-center justify-center px-4 text-center text-white">
+  <div className="max-w-3xl mx-auto">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Welcome to <span className="text-yellow-400">DR. FIXIT LTD.</span>
+    </h1>
+
+    <p className="text-base md:text-xl leading-relaxed opacity-90">
+      Building a stronger, smart Bangladesh through innovation, quality, and trust.
+    </p>
   </div>
 </div>
+
+</div>
+
 
       {/* ================== About Section ================== */}
       <section className="relative overflow-hidden">
         {/* Wave Shape (orange background with curve) */}
-        <div className="bg-[#A12420] w-full h-[200px]">
-          <div className="absolute top-0 right-0 w-full z-0">
-            <img
-              src={waveShape}
-              alt="Wave Shape"
-              className="w-full h-full  object-cover"
-            />
-          </div>
-          <div className="relative z-10 flex flex-col md:flex-row items-center md:items-end justify-center md:justify-start gap-3 md:gap-6 px-6 md:px-12 lg:px-50 pt-[50px] pb-10 text-center md:text-left">
-            {/* Logo */}
-            <img
-              src={logo5}
-              alt="Fixit Logo"
-              className="h-[70px] w-[70px] md:h-[90px] md:w-[90px] lg:h-[120px] lg:w-[120px] object-contain mx-auto md:mx-0"
-            />
-
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-black leading-tight">
-              About{" "}
-              <span className="text-white sm:text-[#A12420] font-bold">
-                Fixit Group
-              </span>
-            </h2>
-          </div>
-        </div>
+        
 
         {/* Header (Logo + About Text on orange area) */}
 
         {/* Red Content Section (corrected color) */}
-        <div className="relative bg-[#A12420] text-white px-6 md:px-12 lg:px-10 py-16 z-[-1000]">
-          <div className="max-w-[1488px] mx-auto">
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p>
-                <span className="font-bold text-white">Fixit Group</span> began
-                its journey in 2019, entering the construction market in
-                Bangladesh under the <strong>National</strong> brand. We
-                initially introduced Link wide range of construction chemical
-                products, including{" "}
-                <strong>
-                  Concrete Admixture, Waterproofing Experts for Leak-free Home,
-                  Damp Proofing, Wall Crack & Water Wall Sealer
-                </strong>
-                . Within Link short period, these products gained the trust and
-                confidence of customers nationwide, establishing{" "}
-                <span className="font-bold text-white">Fixit Group</span> as
-                Link trusted and reliable name in the{" "}
-                <strong>Construction Chemical Industry of Bangladesh.</strong>
-              </p>
 
-              <p>
-                In 2022, we expanded into the Lubricant Industry through our new
-                brand, <span className="font-bold text-white">JAGUAR</span>. Our
-                goal was to provide high-quality Industrial Lubricants and
-                Automotive Lubricants, ensuring superior performance for both
-                industrial and automotive sectors. Today, Jaguar Lubricants
-                stands as Link symbol of quality and long-lasting performance in
-                the Bangladesh market.
-              </p>
+      <section className="bg-[#F0F2F1] py-10 px-10 md:px-16">
+        <div className="max-w-[1300px] mx-auto">
+          {/* Heading and Image in one line */}
+          <div className="flex flex-col md:flex-row justify-between items-center lg:items-end mb-8">
+            {/* Heading */}
+            <h2 className="text-10xl md:text-[43px] font-normal text-black mb-6 md:mb-0 lg:mb-2">
+              About <span className="font-bold">Dr. Fixit Limited</span>
+            </h2>
 
-              <p>
-                In 2024, our business entered Link new era when we officially
-                registered with the Bangladesh Government under the name{" "}
-                <span className="font-bold text-white">Dr. Fixit Limited</span>,
-                obtaining RJSC certification along with all required legal and
-                business documents. This milestone marked Link significant
-                chapter in Fixit Group’s history-a period of strong growth and
-                overwhelming positive feedback from our valued customers.
-                Alhamdulillah!
-              </p>
-
-              <p>
-                In 2025, we proudly became the{" "}
-                <span className="font-bold text-white">
-                  Authorized Importer of Motul
-                </span>{" "}
-                in Bangladesh. Through this partnership, we brought
-                world-renowned <strong>Motul Lubricants</strong> to the local
-                market, further strengthening our presence in the{" "}
-                <strong>automotive and industrial lubricant industry.</strong>
-              </p>
-
-              <p>
-                However, our entrepreneurial journey began much earlier-back in
-                2014, with Link printing business named{" "}
-                <span className="italic font-bold">
-                  Shadow Design & Printing
-                </span>
-                . From that humble beginning, we have gradually expanded across
-                multiple sectors, driven by dedication, innovation, and customer
-                trust.
-              </p>
-
-              <p>
-                Today,{" "}
-                <span className="font-bold text-white ">Fixit Group</span>{" "}
-                stands as Link symbol of quality, durability, and reliability in{" "}
-                <strong>
-                  Bangladesh’s construction, lubricant, and printing industries.
-                </strong>
-              </p>
+            {/* Image */}
+            <div className="w-[180px] md:w-[260px] lg:w-[600px] flex justify-center md:justify-end">
+              <img
+                src={fixitHelmet}
+                alt="Dr. Fixit Helmet"
+                className="object-contain lg:translate-y-1"
+              />
             </div>
           </div>
+
+          {/* Paragraphs */}
+          <p className="text-[15px] md:text-[30px] text-[#222] leading-relaxed mb-5 text-justify">
+            In 2024, our business entered a new phase when we officially
+            registered with the Government of Bangladesh under the name{" "}
+            <span className="font-bold">Dr. Fixit Limited</span>, completing all
+            legal and business documentation along with{" "}
+            <span className="font-bold">RJSC certification</span>. This
+            significant milestone marked the beginning of a new era in{" "}
+            <span className="font-bold">Fixit Group’s</span> history, where we
+            received overwhelming positive feedback from our valued customers.
+            Alhamdulillah!
+          </p>
+
+          <p className="text-[15px] md:text-[30px] text-[#222] leading-relaxed text-justify">
+            We quickly gained the trust of our customers, and within a short
+            period, <span className="font-bold">Dr. Fixit Limited</span>{" "}
+            established itself as a trusted and reliable name in Bangladesh’s{" "}
+            <span className="font-bold">Construction Chemical Industry</span>.
+            We offer a wide range of products including{" "}
+            <span className="font-bold">
+              Concrete Admixture, Waterproofing Solutions for Leak-free Homes,
+              Damp Proofing, Damp Guard, Heat Proofing, and Wall Crack Solutions
+            </span>
+            , which have become a symbol of quality and reliability for our
+            clients. Today, <span className="font-bold">Dr. Fixit Limited</span>{" "}
+            maintains a leading position in the construction industry in
+            Bangladesh, and every product and service we provide ensures
+            customer trust and satisfaction.
+          </p>
         </div>
+      </section>
       </section>
 
       {/* ================== Logo Grid Section ================== */}
@@ -343,7 +300,7 @@ const AboutUs = () => {
       </div>
 
       {/* Final Statement */}
-      <div className="flex items-center justify-center px-4 py-[80px] bg-white text-center">
+      <div className="flex items-center justify-center px-4 py-20 bg-white text-center">
         <p className="text-xl leading-relaxed max-w-3xl">
           <span className="text-red-600 underline font-semibold">FIXIT GROUP</span>{" "}
           is dedicated to quality, sustainability, and innovation – building a stronger,
