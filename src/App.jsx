@@ -10,7 +10,7 @@ import Remover from "./Components/Remover/Remover";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Contactus from "./Components/Contactus/Contactus";
 import ShippingPolicy from "./Components/ShippingPolicy/ShippingPolicy";
-import RefundPolicy from "./Components/RefundPolicy/refundpolicy";
+import RefundPolicy from "./Components/RefundPolicy/RefundPolicy";
 import TermsService from "./Components/TermsService/TermsService";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Faqs from "./Components/FAQs/Faqs";

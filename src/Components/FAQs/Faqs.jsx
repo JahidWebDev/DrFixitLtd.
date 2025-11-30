@@ -1,13 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  FaWater,
-  FaShieldAlt,
-  FaUser,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { GiBrickWall } from "react-icons/gi";
 
 import Logo from "../../Home-page-images/Logo.jpg";
 
