@@ -11,6 +11,9 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import Contactus from "./Components/Contactus/Contactus";
 import ShippingPolicy from "./Components/ShippingPolicy/ShippingPolicy";
 import RefundPolicy from "./Components/RefundPolicy/refundpolicy";
+import TermsService from "./Components/TermsService/TermsService";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import Faqs from "./Components/FAQs/Faqs";
 
 
 function Home() {
@@ -36,6 +39,9 @@ function App() {
          <Route path="/contact" element={<Contactus />} />
          <Route path="/shipping-policy" element={<ShippingPolicy/>} />
          <Route path="/refund-policy" element={<RefundPolicy/>} />
+         <Route path="/terms-of-service" element={<TermsService/>} />
+         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+         <Route path="/faqs" element={<Faqs/>} />
       </Routes>
       <Footer />
     </Router>
