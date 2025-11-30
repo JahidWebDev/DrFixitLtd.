@@ -110,10 +110,10 @@ const Contactus = () => {
           )}
         </li>
 
-        <li><Link to="/about-us" className="hover:text-yellow-400">ABOUT US</Link></li>
         <li><Link to="#" className="hover:text-yellow-400">CERTIFICATE</Link></li>
-        <li><Link to="#" className="hover:text-yellow-400">RESOURCE</Link></li>
-        <li><Link to="/contact" className="hover:text-yellow-400 text-amber-300">CONTACT</Link></li>
+                    <li><Link to="/about-us" className="hover:text-yellow-400">ABOUT US</Link></li>
+                    <li><Link to="/faqs" className="hover:text-yellow-400">FAQs</Link></li>
+                    <li><Link to="/contact" className="hover:text-yellow-400 text-yellow-500">CONTACT</Link></li>
       </ul>
     </nav>
   </div>
