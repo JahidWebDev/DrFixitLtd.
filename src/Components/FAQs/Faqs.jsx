@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 import Logo from "../../Home-page-images/Logo.jpg";
-
+import { FaPlus, FaMinus } from "react-icons/fa"
 // Use two DIFFERENT images here
 import img1 from "../../Home-page-images/Banner.jpg";
 // import img2 from "../../Home-page-images/Banner.jpg";  // <-- FIXED (must be different)
@@ -12,8 +12,58 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { Link, NavLink } from "react-router-dom";
+const faqs = [
+  {
+    question: "1. What types of products do you sell?",
+    answer: "We offer a wide range of building materials, including waterproofing solutions, construction chemicals, repair products, coatings, sealants, tools, and more."
+  },
+  {
+    question: "2. Do you offer home delivery?",
+    answer: "Yes. We provide delivery across Bangladesh. Delivery charges may vary depending on location and product weight."
+  },
+  {
+    question: "3. How long does delivery take?",
+    answer: "Most orders arrive within 2 -5 business days depending on the destination. Dhaka delivery is usually faster."
+  },
+  {
+    question: "4. Can I return or exchange a product?",
+    answer: "Yes, you can request a return or exchange if:\n• The item is unused & in original condition\n• Request is made within 3 days of delivery\n• You have the receipt or order number\n(We can also create a full Return Policy page for you.)"
+  },
+  {
+    question: "5. What payment methods do you accept?",
+    answer: "• Cash on Delivery\n• Mobile Banking (bkash/Nagad/Rocket)\n• Online Gateway (if activated)\n• Bank Transfer"
+  },
+  {
+    question: "6. Is Cash on Delivery available?",
+    answer: "COD applies to most items except heavy or special-order products which may require advance payment."
+  },
+  {
+    question: "7. Are your products genuine?",
+    answer: "Yes- we supply authentic materials sourced directly from authorized distributors or manufacturers."
+  },
+  {
+    question: "8. How do I choose the right product?",
+    answer: "Contact our support team for guidance. We help you select correct materials for your construction or repair project."
+  },
+  {
+    question: "9. Can I cancel an order?",
+    answer: "Yes- cancellation is possible before shipment. After dispatch, cancellation is not allowed, but return terms may apply."
+  },
+  {
+    question: "10. Do you provide technical support?",
+    answer: "Yes, our specialists assist with usage instructions, application methods, and technical queries."
+  }
+];
+
+
 
 const Faqs = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -220,110 +270,32 @@ const Faqs = () => {
         {/* Content Section */}
       </header>
 <section className="py-20 md:px-16 lg:px-28 bg-white text-black">
-  <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto rounded-2xl p-10 md:p-14 text-black">
+        <h2 className="text-4xl md:text-5xl font-bold mb-14">Frequently Asked Questions</h2>
 
-    <h2 className="text-4xl md:text-5xl font-bold  mb-14">Frequently Asked Questions</h2>
+        <div className="space-y-6 text-lg md:text-xl">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border-b border-gray-200 pb-4">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="flex justify-between w-full items-center text-left font-semibold text-2xl"
+              >
+                {faq.question}
+                {activeIndex === index ? <FaMinus /> : <FaPlus />}
+              </button>
+              <div
+  className={`mt-2 overflow-hidden transition-all duration-500 ease-in-out ${
+    activeIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+  } whitespace-pre-line`}
+>
+  <p className="mt-2">{faq.answer}</p>
+</div>
 
-    <div className="space-y-10 text-lg md:text-xl leading-8">
-
-      {/* Q1 */}
-      <div>
-        <h3 className="font-semibold text-2xl">1. What types of products do you sell?</h3>
-        <p className="mt-2">
-          We offer a wide range of building materials, including waterproofing solutions,
-          construction chemicals, repair products, coatings, sealants, tools, and more.
-        </p>
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* Q2 */}
-      <div>
-        <h3 className="font-semibold text-2xl">2. Do you offer home delivery?</h3>
-        <p className="mt-2">
-          Yes. We provide delivery across Bangladesh. Delivery charges may vary depending on
-          location and product weight.
-        </p>
-      </div>
-
-      {/* Q3 */}
-      <div>
-        <h3 className="font-semibold text-2xl">3. How long does delivery take?</h3>
-        <p className="mt-2">
-          Most orders arrive within 2 -5 business days depending on the destination. Dhaka delivery
-          is usually faster.
-        </p>
-      </div>
-
-      {/* Q4 */}
-      <div>
-        <h3 className="font-semibold text-2xl">4. Can I return or exchange a product?</h3>
-        <p className="mt-2">Yes, you can request a return or exchange if:</p>
-        <ul className="list-disc pl-6 space-y-1 mt-1">
-          <li>The item is unused & in original condition</li>
-          <li>Request is made within 3 days of delivery</li>
-          <li>You have the receipt or order number</li>
-        </ul>
-        <p className="mt-2 font-medium italic">(We can also create a full Return Policy page for you.)</p>
-      </div>
-
-      {/* Q5 */}
-      <div>
-        <h3 className="font-semibold text-2xl">5. What payment methods do you accept?</h3>
-        <ul className="list-disc pl-6 space-y-1 mt-2">
-          <li>Cash on Delivery</li>
-          <li>Mobile Banking (bkash/Nagad/Rocket)</li>
-          <li>Online Gateway (if activated)</li>
-          <li>Bank Transfer</li>
-        </ul>
-      </div>
-
-      {/* Q6 */}
-      <div>
-        <h3 className="font-semibold text-2xl">6. Is Cash on Delivery available?</h3>
-        <p className="mt-2">
-          COD applies to most items except heavy or special-order products which may require
-          advance payment.
-        </p>
-      </div>
-
-      {/* Q7 */}
-      <div>
-        <h3 className="font-semibold text-2xl">7. Are your products genuine?</h3>
-        <p className="mt-2">
-          Yes- we supply authentic materials sourced directly from authorized distributors or
-          manufacturers.
-        </p>
-      </div>
-
-      {/* Q8 */}
-      <div>
-        <h3 className="font-semibold text-2xl">8. How do I choose the right product?</h3>
-        <p className="mt-2">
-          Contact our support team for guidance. We help you select correct materials for your
-          construction or repair project.
-        </p>
-      </div>
-
-      {/* Q9 */}
-      <div>
-        <h3 className="font-semibold text-2xl">9. Can I cancel an order?</h3>
-        <p className="mt-2">
-          Yes- cancellation is possible before shipment. After dispatch, cancellation is not
-          allowed, but return terms may apply.
-        </p>
-      </div>
-
-      {/* Q10 */}
-      <div>
-        <h3 className="font-semibold text-2xl">10. Do you provide technical support?</h3>
-        <p className="mt-2">
-          Yes, our specialists assist with usage instructions, application methods, and technical
-          queries.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
     </section>

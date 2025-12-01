@@ -175,7 +175,7 @@ useEffect(() => {
 
     </header>
   <section className="py-20 md:px-12 lg:px-24">
-  <div className="max-w-6xl mx-auto rounded-2xl p-10 md:p-14 text-black">
+  <div id="banners" className="max-w-6xl mx-auto rounded-2xl p-10 md:p-14 text-black">
     
     {/* Heading */}
     <h1 className="text-5xl md:text-6xl font-bold mb-14">

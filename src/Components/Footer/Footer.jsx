@@ -12,15 +12,18 @@ const Footer = () => {
 <div>
   <h3 className="text-xl font-semibold mb-12 tracking-wide">Help & Support</h3>
   
-  <ul className="space-y-3 text-base leading-relaxed">
-    <li><Link to="/shipping-policy" className="hover:text-yellow-300">Shipping Policy</Link></li>
-    <li><Link to="/refund-policy" className="hover:text-yellow-300">Return & Refund Policy</Link></li>
-    <li><Link to="/terms-of-service" className="hover:text-yellow-300">Terms of Service</Link></li>
-    <li><Link to="/privacy-policy" className="hover:text-yellow-300">Privacy Policy</Link></li>
-    <li><Link to="/about-us" className="hover:text-yellow-300">About Us</Link></li>
-    <li><Link to="/faqs" className="hover:text-yellow-300">FAQs</Link></li>
-    <li><Link to="/contact" className="hover:text-yellow-300">Contact Us</Link></li>
-  </ul>
+<ul className="space-y-3 text-base leading-relaxed">
+  <li><Link to="/shipping-policy" state={{ scrollTop: true }} className="hover:text-yellow-300">Shipping Policy</Link></li>
+  <li><Link to="/refund-policy" state={{ scrollTop: true }} className="hover:text-yellow-300">Return & Refund Policy</Link></li>
+  <li><Link to="/terms-of-service" state={{ scrollTop: true }} className="hover:text-yellow-300">Terms of Service</Link></li>
+  <li><Link to="/privacy-policy" state={{ scrollTop: true }} className="hover:text-yellow-300">Privacy Policy</Link></li>
+  <li><Link to="/about-us" state={{ scrollTop: true }} className="hover:text-yellow-300">About Us</Link></li>
+  <li><Link to="/faqs" state={{ scrollTop: true }} className="hover:text-yellow-300">FAQs</Link></li>
+  <li><Link to="/contact" state={{ scrollTop: true }} className="hover:text-yellow-300">Contact Us</Link></li>
+</ul>
+
+
+
 </div>
 
     {/* Products Service */}

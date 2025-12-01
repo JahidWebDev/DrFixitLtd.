@@ -120,8 +120,8 @@ const Contactus = () => {
       </div>
 
       {/* CONTACT FORM SECTION */}
-      <section className="bg-[#FAF9F6] py-20 sm:py-28 md:py-40 px-4 sm:px-10 md:px-20 lg:px-40">
-        <div className="mb-10 text-center md:text-left">
+      <section id="banners" className="  bg-[#FAF9F6] py-20 sm:py-28 md:py-40 px-4 sm:px-10 md:px-20 lg:px-40">
+        <div  className="mb-10 text-center md:text-left">
           <p className="text-sm font-semibold text-black mb-2">
             <span className="text-red-600">//</span> GET IN TOUCH
           </p>

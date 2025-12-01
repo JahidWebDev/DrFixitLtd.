@@ -14,13 +14,17 @@ import RefundPolicy from "./Components/RefundPolicy/RefundPolicy";
 import TermsService from "./Components/TermsService/TermsService";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Faqs from "./Components/FAQs/Faqs";
+import ScrollTop from "./Components/ScrollTop";
 
 
 function Home() {
   return (
     <>
+    
      <Header />
+     
      <Waterproofing/>
+     
     </>
   );
 }
@@ -28,7 +32,9 @@ function Home() {
 function App() {
   return (
     <Router>
+      
       <ScrollToTop />
+      <ScrollTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newconstruction" element={<Newconstruction />} />

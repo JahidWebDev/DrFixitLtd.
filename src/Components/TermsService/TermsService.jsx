@@ -229,7 +229,7 @@ const TermsService = () => {
         {/* Content Section */}
       </header>
       <section className="py-16 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto rounded-2xl p-8 md:p-12 text-black">
+        <div id="banners" className="max-w-6xl mx-auto rounded-2xl p-8 md:p-12 text-black">
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl font-bold mb-12">
             Terms of service

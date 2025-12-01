@@ -1,13 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  FaWater,
-  FaShieldAlt,
-  FaUser,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { GiBrickWall } from "react-icons/gi";
 
 import Logo from "../../Home-page-images/Logo.jpg";
 
@@ -228,8 +219,8 @@ const PrivacyPolicy = () => {
 
         {/* Content Section */}
       </header>
-   <section className="py-20 md:px-16 lg:px-28">
-  <div className="max-w-6xl mx-auto rounded-2xl p-10 md:p-14 text-black">
+   <section  className=" py-20 md:px-16 lg:px-28">
+  <div  id="banners" className="max-w-6xl mx-auto rounded-2xl p-10 md:p-14 text-black">
 
     {/* Heading */}
     <h1 className="text-5xl md:text-6xl font-bold mb-12">
