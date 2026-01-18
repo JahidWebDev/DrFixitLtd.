@@ -154,16 +154,38 @@ useEffect(() => {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-20 md:hidden">
-              <ul className="space-y-4 text-gray-800">
-                <li><Link to="#" className="block hover:text-yellow-400">PRODUCTS</Link></li>
-                <li><Link to="#" className="block hover:text-yellow-400">RESOURCE</Link></li>
-                <li><Link to="#" className="block hover:text-yellow-400">CERTIFICATE</Link></li>
-                <li><Link to="#" className="block hover:text-yellow-400">TEAM</Link></li>
-                <li><Link to="/contact" className="block hover:text-yellow-400">CONTACT</Link></li>
-              </ul>
-            </div>
-          )}
+                     <div className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-50 md:hidden
+         ">
+                       <ul className="space-y-4 text-gray-800">
+                         <li>
+                           <Link to="/newconstruction" className="block hover:text-yellow-400">
+                             PRODUCTS
+                           </Link>
+                         </li>
+                        
+                         <li>
+                           <Link to="#" className="block hover:text-yellow-400">
+                             CERTIFICATE
+                           </Link>
+                         </li>
+                         <li>
+                           <Link to="/about-us" className="block hover:text-yellow-400">
+                            ABOUT US
+                           </Link>
+                         </li>
+                         <li>
+                           <Link to="/faqs" className="block hover:text-yellow-400">
+                             FAQs
+                           </Link>
+                         </li>
+                         <li>
+                           <Link to="/contact" className="block hover:text-yellow-400">
+                             CONTACT
+                           </Link>
+                         </li>
+                       </ul>
+                     </div>
+                   )}
 
         </nav>
       </div>

@@ -53,7 +53,7 @@ const products = [
     subtitle: "Dr. Fixit Drproof LW+",
     subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
     description:
-      "Integral Liquid Waterproofing Compound for Concrete & Plaster. Dr. Fixit Drproof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster.",
+      "Dr. Fixit Drproof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster. The compound enhances the cohesiveness of concrete, reduces segregation, minimizes shrinkage cracks, and provides superior waterproofing and durability to structures.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product1 }],
   },
@@ -67,7 +67,7 @@ const products = [
     subtitle: "Dr. Fixit 302 Super Latex",
     subtitletwo: "SBR Latex for repairs & waterproofing",
     description:
-      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation enhances the strength, flexibility, and water resistance of cementitious mixes.",
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation enhances the strength, flexibility, and water resistance of cementitious mixes, making it an ideal solution for long-lasting repairs and surface protection.",
     images: [{ id: 1, url: product12 }],
   },
 
@@ -80,7 +80,7 @@ const products = [
     subtitle: "Dr. Fixit Drproof LW+",
     subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
     description:
-      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It enhances cohesiveness, reduces shrinkage cracks, and provides superior waterproofing.",
+      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster. The compound enhances the cohesiveness of concrete, reduces segregation minimizes shrinkage cracks, and provides superior waterproofing and durability to structures.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product3 }],
   },
@@ -94,7 +94,7 @@ const products = [
     subtitle: "Dr. Fixit 302 Super Latex",
     subtitletwo: "SBR Latex for repairs & waterproofing",
     description:
-      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair. It enhances strength, flexibility, and water resistance of cement mixes.",
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation is known for enhancing the tstrength, flexibility, and water resistance of cementitious mixes making it an ideal solution for long-lasting repairs and surface promaking it an ideal solution for long-lasting repairs and surface protection.",
     images: [{ id: 1, url: product8 }],
   },
 
@@ -107,7 +107,7 @@ const products = [
     subtitle: "Dr. Fixit Drproof LW+",
     subtitletwo: "Integral Liquid Waterproofing Compound for Concrete & Plaster",
     description:
-      "Dr. Fixit Dr.proof LW+ is a specially formulated waterproofing compound that reduces cracking, increases durability, and improves concrete quality.",
+      "Dr. Fixit Dr.proof LW+ is a specially formulated integral liquid waterproofing compound made from high-quality plasticising agents, polymers, and active additives. It is used as a waterproof additive for cement concrete, mortar, and plaster. The compound enhances the cohesiveness of concrete, reduces segregation minimizes shrinkage cracks, and provides superior waterproofing and durability to structures.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product3 }],
   },
@@ -121,7 +121,7 @@ const products = [
     subtitle: "Dr. Fixit 302 Super Latex",
     subtitletwo: "SBR Latex for repairs & waterproofing",
     description:
-      "High-quality SBR waterproofing and bonding agent ideal for concrete repairs, increasing adhesion, and enhancing waterproofing performance.",
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applications. This URP-based formulation is known for enhancing the strength, flexibility, and water resistance of cementitious mixes, making it an ideal solution for long-lasting repairs and surface protection.",
     images: [{ id: 1, url: product8 }],
   },
 
@@ -134,7 +134,7 @@ const products = [
     subtitle: "Dr. Fixit 5400 Interior Wall Sealer",
     subtitletwo: "Excellent Finish Leveling",
     description:
-      "A high-quality water-based primer for interior walls. Seals porous surfaces, improves paint adhesion, and ensures a smooth, durable finish.",
+      "Dr. Fixit 5400 Interior Wall Sealer is a high-quality, water-based primer and sealer designed for interior walls. It effectively seals porous surfaces, provides a uniform base for paint, and improves paint adhesion and durability. It is ideal for use on plaster, cement, and masonry surfaces before applying emulsion or acrylic paints.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product5 }],
   },
@@ -148,7 +148,7 @@ const products = [
     subtitle: "Dr. Fixit 302 Super Latex",
     subtitletwo: "SBR Latex for repairs & waterproofing",
     description:
-      "A premium SBR latex additive for waterproofing and bonding. Enhances durability, flexibility, and water resistance of cement mixes.",
+      "Dr. Fixit 302 Super Latex is a Styrene-Butadiene co-polymer latex designed for waterproofing, bonding, and concrete repair applica-tions. This URP-based formulation is known for enhancing the strength, flexibility, and water resistance of cementitious mixes, making it an ideal solution for long-lasting repairs and surface protection.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product2 }],
   },
@@ -162,7 +162,7 @@ const products = [
     subtitle: "Dr. Fixit 5100 Exterior Wall Sealer",
     subtitletwo: "Excellent Finish Leveling",
     description:
-      "High-performance water-based sealer for exterior walls. Provides moisture protection, increases durability, and enhances finishing coat performance.",
+      "Dr. Fixit 5100 Wall Sealer is a high-performance, water-based sealer specially formulated for exterior walls, whether new or repainted. It enhances the durability and performance of the finishing coat while providing effective protection against moisture and alkalinity. Ideal when used with Weatherbond, it ensures long-lasting exterior wall protection and a superior finish.",
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product10 }],
   },
@@ -175,7 +175,7 @@ const products = [
     quantity: "1 Kg",
     subtitle: "Dr. Fixit Rust Remover - Multi-Purpose",
     description:
-      "A powerful chemical solution that removes rust, corrosion, and iron oxide deposits from metal tools and construction equipment.",
+      "Dr. Fixit Rust Remover is a highly effective chemical solution designed to remove rust, corrosion, and stubborn iron oxide deposits from metal surfaces, tools, and construction equipment. It restores metal surfaces to their original clean condition without causing damage to the base metal.",
     availablePackaging: "5ml, 1 litre, and 5 litre",
     images: [{ id: 1, url: product11 }],
   },
@@ -188,7 +188,7 @@ const products = [
     quantity: "250 gm",
     subtitle: "Fevilock (Glue) - Premium Synthetic Resin Adhesive",
     description:
-      "A high-quality, water-based resin adhesive for wood, paper, cardboard, and more. Ideal for home, school, and office use.",
+      "Fevilock is a high-quality, water-based synthetic resin adhesive designed for strong and reliable bonding on wood, paper, cardboard, and other surfaces. Perfect for household, school, and office use, it combines safety, hygiene, and excellent performance.",
     availablePackaging: "20gm, 50gm, 100gm, 200gm, and 250gm",
     images: [{ id: 1, url: product9 }],
   },

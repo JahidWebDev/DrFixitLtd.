@@ -115,6 +115,50 @@ const Contactus = () => {
                     <li><Link to="/faqs" className="hover:text-yellow-400">FAQs</Link></li>
                     <li><Link to="/contact" className="hover:text-yellow-400 text-yellow-500">CONTACT</Link></li>
       </ul>
+      
+                {/* Mobile Menu Button */}
+                <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                      d="M4 6h16M4 12h16m-7 6h7"/>
+                  </svg>
+                </button>
+      
+                {/* Mobile Menu */}
+                {menuOpen && (
+                           <div className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-50 md:hidden
+               ">
+                             <ul className="space-y-4 text-gray-800">
+                               <li>
+                                 <Link to="/newconstruction" className="block hover:text-yellow-400">
+                                   PRODUCTS
+                                 </Link>
+                               </li>
+                              
+                               <li>
+                                 <Link to="#" className="block hover:text-yellow-400">
+                                   CERTIFICATE
+                                 </Link>
+                               </li>
+                               <li>
+                                 <Link to="/about-us" className="block hover:text-yellow-400">
+                                  ABOUT US
+                                 </Link>
+                               </li>
+                               <li>
+                                 <Link to="/faqs" className="block hover:text-yellow-400">
+                                   FAQs
+                                 </Link>
+                               </li>
+                               <li>
+                                 <Link to="/contact" className="block hover:text-yellow-400">
+                                   CONTACT
+                                 </Link>
+                               </li>
+                             </ul>
+                           </div>
+                         )}
+      
     </nav>
   </div>
       </div>
