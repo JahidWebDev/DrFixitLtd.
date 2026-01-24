@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+
+import emailjs from "@emailjs/browser";
+
 import {
   FaWater,
   FaShieldAlt,
@@ -55,20 +58,36 @@ const Header = () => {
   }, [activeSlide]);
 
   // Contact Form (mailto)
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    const name = encodeURIComponent(e.target.name.value.trim());
-    const mobile = encodeURIComponent(e.target.mobile.value.trim());
-    const email = encodeURIComponent(e.target.email.value.trim());
-    const location = encodeURIComponent(e.target.dlocation.value.trim());
+const form = useRef();
 
-    let subject = encodeURIComponent("Call Back Request from Website");
-    let body = `Hi! I would like a call back.%0AName: ${name}%0AMobile: ${mobile}%0A`;
-    if (email) body += `Email: ${email}%0A`;
-    if (location) body += `Location: ${location}%0A`;
+const [isSending, setIsSending] = useState(false);
+const [sent, setSent] = useState(false);
 
-    window.location.href = `mailto:webdeveloper2324@gmail.com?subject=${subject}&body=${body}`;
-  };
+const sendEmail = (e) => {
+  e.preventDefault();
+  setIsSending(true);
+
+  emailjs
+    .sendForm(
+      "service_a4t7uq6",
+      "template_3wjfacu",
+      form.current,
+      "jpez9azGNJatkyjQE"
+    )
+    .then(
+      () => {
+        setIsSending(false);
+        setSent(true);
+        form.current.reset();
+        setTimeout(() => setSent(false), 4000);
+      },
+      (error) => {
+        setIsSending(false);
+        alert("Failed to send message: " + error.text);
+      }
+    );
+};
+
 
   return (
     <header className="relative min-h-screen overflow-hidden">
@@ -298,7 +317,8 @@ const Header = () => {
 
     {/* FORM */}
     <form
-      onSubmit={handleContactSubmit}
+        ref={form}
+  onSubmit={sendEmail}
       className="
         bg-white/15 backdrop-blur-xl
         border border-white/20
@@ -308,7 +328,7 @@ const Header = () => {
         w-full md:w-[680px]
         mx-auto
         mt-8 md:mt-10
-        md:ml-7
+        md:ml-0
       "
     >
       <h2 className="text-center text-xl sm:text-2xl font-semibold pb-5 sm:pb-7">
@@ -332,11 +352,13 @@ const Header = () => {
         <div className="relative">
           <FaPhoneAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
+          
             type="tel"
             name="mobile"
             placeholder="Mobile"
             required
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
+            
           />
         </div>
 
@@ -345,9 +367,11 @@ const Header = () => {
           <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
             type="email"
+            
             name="email"
             placeholder="E-mail"
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
+           required
           />
         </div>
 
@@ -359,6 +383,7 @@ const Header = () => {
             name="dlocation"
             placeholder="District/Upazila"
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
+            
           />
         </div>
       </div>
@@ -370,19 +395,22 @@ const Header = () => {
         </p>
       </div>
 
-      <button
-        type="submit"
-        className="
-          bg-yellow-400 hover:bg-yellow-500
-          text-black font-semibold
-          py-3 px-8 rounded-md
-          mt-4 transition-all
-          mx-auto md:ml-4 md:mx-0
-          block
-        "
-      >
-        Please Return My Call
-      </button>
+
+   <button
+  type="submit"
+  disabled={isSending}
+  className="
+    bg-yellow-400 hover:bg-yellow-500
+    text-black font-semibold
+    py-3 px-8 rounded-md
+    mt-4 transition-all
+    mx-auto md:ml-4 md:mx-0
+    block
+  "
+>
+  Please Return My Call
+</button>
+
     </form>
 
     {/* Bottom Info */}

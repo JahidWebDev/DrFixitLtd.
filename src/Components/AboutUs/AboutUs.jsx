@@ -5,8 +5,7 @@ import img4 from "../../AboutUs-images/Fixit-Group-About-us.png";
 import fixitHelmet from "../../New-construction-images/Biulding-&-Cap.png";
 import logo from "../../Home-page-images/Logo.jpg";
 
-import logo5 from "../../AboutUs-images/Fixit-Group-Logo-Black-&-White.png";
-import waveShape from "../../AboutUs-images/Fixit-Group-Branding-Icon.png";
+
 
 import fixitLogo from "../../AboutUs-images/Dr-Fixit-Logo.png";
 import jaguarLogo from "../../AboutUs-images/Jaguar-logo.png";
@@ -197,7 +196,7 @@ const AboutUs = () => {
             legal and business documentation along with{" "}
             <span className="font-bold">RJSC certification</span>. This
             significant milestone marked the beginning of a new era in{" "}
-            <span className="font-bold">Fixit Group’s</span> history, where we
+            <span className="font-bold">Dr. Fixit Limited</span> history, where we
             received overwhelming positive feedback from our valued customers.
             Alhamdulillah!
           </p>
@@ -222,42 +221,14 @@ const AboutUs = () => {
       </section>
       </section>
 
-      {/* ================== Logo Grid Section ================== */}
-     <section className="pt-16 sm:pt-20 md:pt-[200px]">
-  <div className="max-w-[1500px] mx-auto px-4">
-    
-    <div className="text-center">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-10 justify-items-center pb-16 sm:pb-20 md:pb-[200px]">
-        {businesses.map((item, index) => (
-          <Link
-            key={index}
-            to={item.link}
-            className="group flex flex-col items-center justify-center hover:scale-105 transition-transform duration-300"
-          >
-            <div className="flex items-center justify-center w-[120px] sm:w-[160px] md:w-[220px] h-[60px] sm:h-[90px] md:h-[110px] transition-all duration-300">
-              <img
-                src={item.logo}
-                alt={item.name}
-                className="max-h-[80%] max-w-[90%] object-contain group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <p className="mt-3 text-xs sm:text-sm md:text-base font-semibold text-gray-800">
-              {item.name}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
-
-  </div>
-</section>
+ 
 
 
       {/* ================== Vision / Mission / Goals ================== */}
-      <div className="max-w-8xl mx-auto bg-[#e6e7e870] my-10 text-gray-900 ">
+      <div className="max-w-8xl mx-auto my-10 text-gray-900 ">
         {" "}
         {/* Vision Section */}{" "}
-        <section className="flex flex-col md:flex-row items-stretch p-6 sm:p-8 md:p-10 transition-all duration-300 cursor-pointer hover:bg-white">
+        <section className="flex flex-col md:flex-row items-stretch p-6 sm:p-8 md:p-10 transition-all duration-300 cursor-pointer ">
           {/* Left Heading */}
           <div className="md:w-1/3 flex items-center justify-center mb-6 md:mb-0">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center">
@@ -308,7 +279,7 @@ const AboutUs = () => {
           </div>
         </section>
         {/* Goals Section */}{" "}
-        <section className="flex flex-col md:flex-row items-stretch p-6 sm:p-8 md:p-10 transition-all duration-300 hover:bg-white">
+        <section className="flex flex-col md:flex-row items-stretch p-6 sm:p-8 md:p-10 transition-all duration-300">
           {/* Left Heading */}
           <div className="md:w-1/3 flex items-center justify-center mb-6 md:mb-0 px-2 sm:px-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center">
@@ -320,7 +291,7 @@ const AboutUs = () => {
           <div className="md:flex-1 md:p-8 px-2 sm:px-4">
             <ul className="list-disc list-inside space-y-3 text-base sm:text-lg leading-relaxed marker:text-red-500">
               <li>
-                Expand Fixit Group’s footprint both nationally and globally.
+                Expand Dr. Fixit Limited footprint both nationally and globally.
               </li>
               <li>
                 Strengthen our portfolio in construction chemicals, industrial &
@@ -346,7 +317,7 @@ const AboutUs = () => {
       {/* Final Statement */}
       <div className="flex items-center justify-center px-4 py-20 bg-white text-center">
         <p className="text-xl leading-relaxed max-w-3xl">
-          <span className="text-red-600 underline font-semibold">FIXIT GROUP</span>{" "}
+          <span className="text-red-600 underline font-semibold">Dr. Fixit Limited</span>{" "}
           is dedicated to quality, sustainability, and innovation – building a stronger,
           smarter Bangladesh.
         </p>

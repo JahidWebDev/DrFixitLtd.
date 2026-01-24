@@ -1,7 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaHandHoldingUsd, FaUserTie } from "react-icons/fa";
-import { GiWaterDrop } from "react-icons/gi";
+
+import { GiWaterDrop  } from "react-icons/gi";
+
+
 
 import roofImg from "../../Home-page-images/rooftop.png";
 import interiorImg from "../../Home-page-images/interior.png";
@@ -195,13 +198,18 @@ const [selected, setSelected] = useState("repair");
       }`}
     >
       {/* Let's Talk Button */}
-   {/* Let's Talk Button */}
+  
+  
 <a
-  href="#contact"
+  href="https://wa.me/8801788360303"
+  target="_blank"
+  rel="noopener noreferrer"
   className="flex justify-center items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-leftRight"
 >
-   Let's Talk Button 
+  <FaWhatsapp className="text-xl" />
+  <span>Let's Talk WhatsApp</span>
 </a>
+
 
 {/* Find a Dealer Button */}
 <a
