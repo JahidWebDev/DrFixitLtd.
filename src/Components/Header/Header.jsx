@@ -63,30 +63,31 @@ const form = useRef();
 const [isSending, setIsSending] = useState(false);
 const [sent, setSent] = useState(false);
 
-const sendEmail = (e) => {
-  e.preventDefault();
-  setIsSending(true);
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
 
-  emailjs
-    .sendForm(
-      "service_a4t7uq6",
-      "template_3wjfacu",
-      form.current,
-      "jpez9azGNJatkyjQE"
-    )
-    .then(
-      () => {
-        setIsSending(false);
-        setSent(true);
-        form.current.reset();
-        setTimeout(() => setSent(false), 4000);
-      },
-      (error) => {
-        setIsSending(false);
-        alert("Failed to send message: " + error.text);
-      }
-    );
-};
+    emailjs
+  .sendForm(
+        "service_2hkc8u8",     // ✅ Service ID
+        "template_3wjfacu",    // ✅ Template ID
+        form.current,
+        "jpez9azGNJatkyjQE"    // ✅ Public Key
+      )
+
+      .then(
+        () => {
+          setIsSending(false);
+          setSent(true);
+          form.current.reset();
+          setTimeout(() => setSent(false), 4000);
+        },
+        (error) => {
+          setIsSending(false);
+          alert("Failed to send message: " + error.text);
+        }
+      );
+  };
 
 
   return (
@@ -334,8 +335,7 @@ const sendEmail = (e) => {
       <h2 className="text-center text-xl sm:text-2xl font-semibold pb-5 sm:pb-7">
         Reach Out to Our Team
       </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Name */}
         <div className="relative">
           <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
@@ -352,13 +352,11 @@ const sendEmail = (e) => {
         <div className="relative">
           <FaPhoneAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
-          
             type="tel"
             name="mobile"
             placeholder="Mobile"
             required
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
-            
           />
         </div>
 
@@ -367,15 +365,14 @@ const sendEmail = (e) => {
           <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
             type="email"
-            
             name="email"
             placeholder="E-mail"
+            required
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
-           required
           />
         </div>
 
-        {/* Location */}
+        {/* District/Upazila */}
         <div className="relative">
           <FaMapMarkerAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
@@ -383,7 +380,7 @@ const sendEmail = (e) => {
             name="dlocation"
             placeholder="District/Upazila"
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
-            
+            required
           />
         </div>
       </div>
@@ -396,20 +393,15 @@ const sendEmail = (e) => {
       </div>
 
 
-   <button
-  type="submit"
-  disabled={isSending}
-  className="
-    bg-yellow-400 hover:bg-yellow-500
-    text-black font-semibold
-    py-3 px-8 rounded-md
-    mt-4 transition-all
-    mx-auto md:ml-4 md:mx-0
-    block
-  "
->
-  Please Return My Call
-</button>
+  <button
+        type="submit"
+        disabled={isSending}
+        className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md mt-4"
+      >
+        {isSending ? "Sending..." : "Send Request"}
+      </button>
+
+      {sent && <p className="text-green-400 mt-2">Your message has been sent!</p>}
 
     </form>
 
