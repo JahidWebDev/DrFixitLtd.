@@ -6,6 +6,9 @@ import { GiWaterDrop  } from "react-icons/gi";
 
 
 
+
+
+
 import roofImg from "../../Home-page-images/rooftop.png";
 import interiorImg from "../../Home-page-images/interior.png";
 import bathroomImg from "../../Home-page-images/bathroom.png";
@@ -109,6 +112,7 @@ const [selected, setSelected] = useState("repair");
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [showQuote, setShowQuote] = useState(false);
   return (
    <section>
      <section className="bg-white py-28 px-6 md:px-12 lg:px-20 overflow-x-hidden w-full">
@@ -213,15 +217,80 @@ const [selected, setSelected] = useState("repair");
 
 {/* Find a Dealer Button */}
 <a
-  href="#dealers"
-  className="flex items-center gap-3 bg-yellow-400 text-black px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-rightLeft"
+  onClick={() => setShowQuote(true)}
+  className="cursor-pointer flex items-center gap-3 bg-yellow-400 text-black px-4 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-rightLeft"
 >
-  Find a Dealer Button
+  Find a Dealer
 </a>
+   
+    </div>
+    {showQuote && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+    
+    <div className="w-full max-w-md bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-2xl relative p-6 animate-scaleIn">
 
+      {/* Close button */}
+      <button
+        onClick={() => setShowQuote(false)}
+        className="absolute top-3 right-3 text-white text-2xl hover:scale-110 transition"
+      >
+        ✕
+      </button>
+
+      {/* Title */}
+      <h2 className="text-white text-2xl font-bold text-center mb-2">
+        Request a Quote
+      </h2>
+      <p className="text-white/80 text-sm text-center mb-6">
+        Please share your details and we’ll contact you shortly
+      </p>
+
+      {/* Form */}
+      <form className="space-y-4">
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+        />
+
+        <input
+          type="text"
+          placeholder="Your Phone Number"
+          className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+        />
+
+        <div className="grid grid-cols-2 gap-3">
+          <select className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20">
+            <option className="text-black">Dealer / Depo</option>
+            <option className="text-black">Dealer</option>
+            <option className="text-black">Depo</option>
+          </select>
+
+          <select className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20">
+            <option className="text-black">District</option>
+            <option className="text-black">Dhaka</option>
+            <option className="text-black">Chattogram</option>
+            <option className="text-black">Rajshahi</option>
+          </select>
+        </div>
+
+        <label className="flex items-start gap-2 text-white text-sm">
+          <input type="checkbox" className="mt-1 accent-white" />
+          I consent to receiving calls based on the information provided above.
+        </label>
+
+        <button
+          type="submit"
+          className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+)}
 
     
-    </div>
           </div>
         </div>
       </div>
