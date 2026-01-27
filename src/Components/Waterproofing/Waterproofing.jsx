@@ -1,12 +1,9 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaWhatsapp, FaHandHoldingUsd, FaUserTie } from "react-icons/fa";
 
 import { GiWaterDrop  } from "react-icons/gi";
-
-
-
-
+import emailjs from "@emailjs/browser";
 
 
 import roofImg from "../../Home-page-images/rooftop.png";
@@ -113,6 +110,40 @@ const [selected, setSelected] = useState("repair");
 
   const [isOpen, setIsOpen] = useState(false);
   const [showQuote, setShowQuote] = useState(false);
+
+const form = useRef();
+
+
+const [isSending, setIsSending] = useState(false);
+const [sent, setSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    emailjs
+  .sendForm(
+        "service_2hkc8u8",     // ✅ Service ID
+        "template_3wjfacu",    // ✅ Template ID
+        form.current,
+        "jpez9azGNJatkyjQE"    // ✅ Public Key
+      )
+
+      .then(
+        () => {
+          setIsSending(false);
+          setSent(true);
+          form.current.reset();
+          setTimeout(() => setSent(false), 4000);
+        },
+        (error) => {
+          setIsSending(false);
+          alert("Failed to send message: " + error.text);
+        }
+      );
+  };
+
+
   return (
    <section>
      <section className="bg-white py-28 px-6 md:px-12 lg:px-20 overflow-x-hidden w-full">
@@ -246,46 +277,89 @@ const [selected, setSelected] = useState("repair");
       </p>
 
       {/* Form */}
-      <form className="space-y-4">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
-        />
+   <form
+  ref={form}
+  onSubmit={sendEmail}
+  className="space-y-4"
+>
+  <input
+    type="text"
+    name="name"   // ✅ required for EmailJS
+    placeholder="Your Name"
+    required
+    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+  />
 
-        <input
-          type="text"
-          placeholder="Your Phone Number"
-          className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
-        />
+  <input
+    type="tel"
+    name="mobile"  // ✅ required
+    placeholder="Your Phone Number"
+    required
+    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+  />
 
-        <div className="grid grid-cols-2 gap-3">
-          <select className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20">
-            <option className="text-black">Dealer / Depo</option>
-            <option className="text-black">Dealer</option>
-            <option className="text-black">Depo</option>
-          </select>
+  <div className="grid grid-cols-2 gap-3">
+    <select
+      name="dlocation" // ✅ required
+      required
+      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+    >
+      <option value="" className="text-black">
+        Dealer / Depo
+      </option>
+      <option value="Dealer" className="text-black">
+        Dealer
+      </option>
+      <option value="Depo" className="text-black">
+        Depo
+      </option>
+    </select>
 
-          <select className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20">
-            <option className="text-black">District</option>
-            <option className="text-black">Dhaka</option>
-            <option className="text-black">Chattogram</option>
-            <option className="text-black">Rajshahi</option>
-          </select>
-        </div>
+    <select
+      type="text"
+            name="district" // ✅ required
+      required
+      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+    >
+      <option value="" className="text-black">
+        District
+      </option>
+      <option value="Dhaka" className="text-black">
+        Dhaka
+      </option>
+      <option value="Chattogram" className="text-black">
+        Chattogram
+      </option>
+      <option value="Rajshahi" className="text-black">
+        Rajshahi
+      </option>
+    </select>
+  </div>
 
-        <label className="flex items-start gap-2 text-white text-sm">
-          <input type="checkbox" className="mt-1 accent-white" />
-          I consent to receiving calls based on the information provided above.
-        </label>
+  <label className="flex items-start gap-2 text-white text-sm">
+    <input
+      type="checkbox"
+      required
+      className="mt-1 accent-white"
+    />
+    I consent to receiving calls based on the information provided above.
+  </label>
 
-        <button
-          type="submit"
-          className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition"
-        >
-          Submit
-        </button>
-      </form>
+  <button
+    type="submit"
+    disabled={isSending}
+    className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-60"
+  >
+    {isSending ? "Sending..." : "Submit"}
+  </button>
+
+  {sent && (
+    <p className="text-green-300 text-sm text-center">
+      ✅ Your request has been sent successfully!
+    </p>
+  )}
+</form>
+
     </div>
   </div>
 )}

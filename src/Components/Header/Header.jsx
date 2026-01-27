@@ -377,7 +377,7 @@ const [sent, setSent] = useState(false);
           <FaMapMarkerAlt className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400 text-lg" />
           <input
             type="text"
-            name="dlocation"
+            name="district"
             placeholder="District/Upazila"
             className="pl-10 p-3 rounded-md bg-white/10 border border-white/30 w-full"
             required

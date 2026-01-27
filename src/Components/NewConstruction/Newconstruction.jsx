@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FiSearch } from "react-icons/fi";
-
+import emailjs from "@emailjs/browser";
 import img1 from "../../New-construction-images/banner.png";
 import img2 from "../../New-construction-images/banner2.png";
 import img3 from "../../New-construction-images/banner3.png";
@@ -185,6 +185,40 @@ const Newconstruction = () => {
     location.pathname === "/newconstruction" ||
     location.pathname === "/repair" ||
     location.pathname === "/remover";
+// =============================================
+
+const form = useRef();
+const [showQuote, setShowQuote] = useState(false);
+
+
+const [isSending, setIsSending] = useState(false);
+const [sent, setSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    emailjs
+  .sendForm(
+        "service_2hkc8u8",     // ✅ Service ID
+        "template_3wjfacu",    // ✅ Template ID
+        form.current,
+        "jpez9azGNJatkyjQE"    // ✅ Public Key
+      )
+
+      .then(
+        () => {
+          setIsSending(false);
+          setSent(true);
+          form.current.reset();
+          setTimeout(() => setSent(false), 4000);
+        },
+        (error) => {
+          setIsSending(false);
+          alert("Failed to send message: " + error.text);
+        }
+      );
+  };
 
   return (
     <section>
@@ -503,9 +537,13 @@ const Newconstruction = () => {
                             Product Details
                           </Link>
 
-                          <button className="bg-yellow-400 text-black text-[15px] font-medium py-2 rounded-md shadow-sm hover:bg-yellow-500 transition-all duration-300 text-center">
-                            Find a Dealer
-                          </button>
+                     <button
+  onClick={() => setShowQuote(true)}
+  className="bg-yellow-400 text-black text-[15px] font-medium py-2 rounded-md shadow-sm hover:bg-yellow-500 transition-all duration-300 text-center"
+>
+  Find a Dealer
+</button>
+
                         </div>
                       </div>
                     );
@@ -518,6 +556,114 @@ const Newconstruction = () => {
               )}
             </main>
           </div>
+    {showQuote && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+    
+    <div className="w-full max-w-md bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-2xl relative p-6 animate-scaleIn">
+
+      {/* Close button */}
+      <button
+        onClick={() => setShowQuote(false)}
+        className="absolute top-3 right-3 text-white text-2xl hover:scale-110 transition"
+      >
+        ✕
+      </button>
+
+      {/* Title */}
+      <h2 className="text-white text-2xl font-bold text-center mb-2">
+        Request a Quote
+      </h2>
+      <p className="text-white/80 text-sm text-center mb-6">
+        Please share your details and we’ll contact you shortly
+      </p>
+
+      {/* Form */}
+   <form
+  ref={form}
+  onSubmit={sendEmail}
+  className="space-y-4"
+>
+  <input
+    type="text"
+    name="name"   // ✅ required for EmailJS
+    placeholder="Your Name"
+    required
+    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+  />
+
+  <input
+    type="tel"
+    name="mobile"  // ✅ required
+    placeholder="Your Phone Number"
+    required
+    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+  />
+
+  <div className="grid grid-cols-2 gap-3">
+    <select
+      name="dlocation" // ✅ required
+      required
+      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+    >
+      <option value="" className="text-black">
+        Dealer / Depo
+      </option>
+      <option value="Dealer" className="text-black">
+        Dealer
+      </option>
+      <option value="Depo" className="text-black">
+        Depo
+      </option>
+    </select>
+
+    <select
+      type="text"
+            name="district" // ✅ required
+      required
+      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+    >
+      <option value="" className="text-black">
+        District
+      </option>
+      <option value="Dhaka" className="text-black">
+        Dhaka
+      </option>
+      <option value="Chattogram" className="text-black">
+        Chattogram
+      </option>
+      <option value="Rajshahi" className="text-black">
+        Rajshahi
+      </option>
+    </select>
+  </div>
+
+  <label className="flex items-start gap-2 text-white text-sm">
+    <input
+      type="checkbox"
+      required
+      className="mt-1 accent-white"
+    />
+    I consent to receiving calls based on the information provided above.
+  </label>
+
+  <button
+    type="submit"
+    disabled={isSending}
+    className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-60"
+  >
+    {isSending ? "Sending..." : "Submit"}
+  </button>
+
+  {sent && (
+    <p className="text-green-300 text-sm text-center">
+      ✅ Your request has been sent successfully!
+    </p>
+  )}
+</form>
+
+    </div>
+  </div>
+)}
         </div>
       </section>
     </section>
