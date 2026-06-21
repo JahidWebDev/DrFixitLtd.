@@ -17,10 +17,11 @@ import product9 from "../../New-construction-images/Fevilock-500-ml.png";
 import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
+import product13 from "../../New-construction-images/DR.FIXIT_FIXIFIN_2K.png";
 
 const Newconstruction = () => {
-   const [menuOpen, setMenuOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("repair");
   const [selectedLeakage, setSelectedLeakage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,6 +59,7 @@ const Newconstruction = () => {
       type: "repair",
       imgs: [product12],
       description: "05 Liter Waterproofing Expert",
+      imgClass: "h-57 w-full", 
     },
     {
       id: 5,
@@ -82,6 +84,7 @@ const Newconstruction = () => {
       type: "repair",
       imgs: [product3],
       description: "30 Liter Waterproofing Expert",
+      imgClass: "h-72 w-full",
     },
     {
       id: 8,
@@ -114,6 +117,15 @@ const Newconstruction = () => {
       category: "Sealer",
       imgs: [product10],
       description: "18 Liter Paint Expert",
+    },
+    {
+      id: 14,
+      name: "Dr Fixit Brand Fixifin2k",
+      type: "repair",
+      category: "Glue",
+      imgs: [product13],
+      description: "18 Liter Bonding Expert",
+      imgClass: "h-72 w-full", // custom size
     },
     {
       id: 12,
@@ -159,7 +171,6 @@ const Newconstruction = () => {
     setSearchTerm(""); // optional: reset search
   };
 
-
   const [activeSlide, setActiveSlide] = useState(0);
   const videoRef = useRef(null);
   const location = useLocation();
@@ -185,25 +196,24 @@ const Newconstruction = () => {
     location.pathname === "/newconstruction" ||
     location.pathname === "/repair" ||
     location.pathname === "/remover";
-// =============================================
+  // =============================================
 
-const form = useRef();
-const [showQuote, setShowQuote] = useState(false);
+  const form = useRef();
+  const [showQuote, setShowQuote] = useState(false);
 
-
-const [isSending, setIsSending] = useState(false);
-const [sent, setSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
 
     emailjs
-  .sendForm(
-        "service_2hkc8u8",     // ✅ Service ID
-        "template_3wjfacu",    // ✅ Template ID
+      .sendForm(
+        "service_2hkc8u8", // ✅ Service ID
+        "template_3wjfacu", // ✅ Template ID
         form.current,
-        "jpez9azGNJatkyjQE"    // ✅ Public Key
+        "jpez9azGNJatkyjQE", // ✅ Public Key
       )
 
       .then(
@@ -216,7 +226,7 @@ const [sent, setSent] = useState(false);
         (error) => {
           setIsSending(false);
           alert("Failed to send message: " + error.text);
-        }
+        },
       );
   };
 
@@ -347,50 +357,69 @@ const [sent, setSent] = useState(false);
                 </Link>
               </li>
             </ul>
-            
-                      {/* Mobile Menu Button */}
-                      <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white">
-                        <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                            d="M4 6h16M4 12h16m-7 6h7"/>
-                        </svg>
-                      </button>
-            
-                      {/* Mobile Menu */}
-                      {menuOpen && (
-                                 <div className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-50 md:hidden
-                     ">
-                                   <ul className="space-y-4 text-gray-800">
-                                     <li>
-                                       <Link to="/newconstruction" className="block hover:text-yellow-400">
-                                         PRODUCTS
-                                       </Link>
-                                     </li>
-                                    
-                                     <li>
-                                       <Link to="#" className="block hover:text-yellow-400">
-                                         CERTIFICATE
-                                       </Link>
-                                     </li>
-                                     <li>
-                                       <Link to="/about-us" className="block hover:text-yellow-400">
-                                        ABOUT US
-                                       </Link>
-                                     </li>
-                                     <li>
-                                       <Link to="/faqs" className="block hover:text-yellow-400">
-                                         FAQs
-                                       </Link>
-                                     </li>
-                                     <li>
-                                       <Link to="/contact" className="block hover:text-yellow-400">
-                                         CONTACT
-                                       </Link>
-                                     </li>
-                                   </ul>
-                                 </div>
-                               )}
-            
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-white"
+            >
+              <svg
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+              <div
+                className="absolute top-20 right-4 w-64 bg-white rounded-lg shadow-xl p-4 z-50 md:hidden
+                     "
+              >
+                <ul className="space-y-4 text-gray-800">
+                  <li>
+                    <Link
+                      to="/newconstruction"
+                      className="block hover:text-yellow-400"
+                    >
+                      PRODUCTS
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="#" className="block hover:text-yellow-400">
+                      CERTIFICATE
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/about-us"
+                      className="block hover:text-yellow-400"
+                    >
+                      ABOUT US
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/faqs" className="block hover:text-yellow-400">
+                      FAQs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" className="block hover:text-yellow-400">
+                      CONTACT
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </nav>
         </div>
       </header>
@@ -512,7 +541,13 @@ const [sent, setSent] = useState(false);
                               src={imgSrc}
                               alt={`${p.name} ${idx + 1}`}
                               effect="blur"
-                              className={`object-contain w-auto transition-transform duration-300 group-hover:scale-105 ${imgHeight}`}
+                              className={`
+        object-contain
+        transition-transform
+        duration-300
+        group-hover:scale-105
+        ${p.imgClass ? p.imgClass : `w-auto ${imgHeight}`}
+      `}
                             />
                           ))}
                         </div>
@@ -537,13 +572,12 @@ const [sent, setSent] = useState(false);
                             Product Details
                           </Link>
 
-                     <button
-  onClick={() => setShowQuote(true)}
-  className="bg-yellow-400 text-black text-[15px] font-medium py-2 rounded-md shadow-sm hover:bg-yellow-500 transition-all duration-300 text-center"
->
-  Find a Dealer
-</button>
-
+                          <button
+                            onClick={() => setShowQuote(true)}
+                            className="bg-yellow-400 text-black text-[15px] font-medium py-2 rounded-md shadow-sm hover:bg-yellow-500 transition-all duration-300 text-center"
+                          >
+                            Find a Dealer
+                          </button>
                         </div>
                       </div>
                     );
@@ -556,114 +590,108 @@ const [sent, setSent] = useState(false);
               )}
             </main>
           </div>
-    {showQuote && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
-    
-    <div className="w-full max-w-md bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-2xl relative p-6 animate-scaleIn">
+          {showQuote && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+              <div className="w-full max-w-md bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-2xl relative p-6 animate-scaleIn">
+                {/* Close button */}
+                <button
+                  onClick={() => setShowQuote(false)}
+                  className="absolute top-3 right-3 text-white text-2xl hover:scale-110 transition"
+                >
+                  ✕
+                </button>
 
-      {/* Close button */}
-      <button
-        onClick={() => setShowQuote(false)}
-        className="absolute top-3 right-3 text-white text-2xl hover:scale-110 transition"
-      >
-        ✕
-      </button>
+                {/* Title */}
+                <h2 className="text-white text-2xl font-bold text-center mb-2">
+                  Request a Quote
+                </h2>
+                <p className="text-white/80 text-sm text-center mb-6">
+                  Please share your details and we’ll contact you shortly
+                </p>
 
-      {/* Title */}
-      <h2 className="text-white text-2xl font-bold text-center mb-2">
-        Request a Quote
-      </h2>
-      <p className="text-white/80 text-sm text-center mb-6">
-        Please share your details and we’ll contact you shortly
-      </p>
+                {/* Form */}
+                <form ref={form} onSubmit={sendEmail} className="space-y-4">
+                  <input
+                    type="text"
+                    name="name" // ✅ required for EmailJS
+                    placeholder="Your Name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+                  />
 
-      {/* Form */}
-   <form
-  ref={form}
-  onSubmit={sendEmail}
-  className="space-y-4"
->
-  <input
-    type="text"
-    name="name"   // ✅ required for EmailJS
-    placeholder="Your Name"
-    required
-    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
-  />
+                  <input
+                    type="tel"
+                    name="mobile" // ✅ required
+                    placeholder="Your Phone Number"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
+                  />
 
-  <input
-    type="tel"
-    name="mobile"  // ✅ required
-    placeholder="Your Phone Number"
-    required
-    className="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white/70 outline-none border border-white/20 focus:border-white"
-  />
+                  <div className="grid grid-cols-2 gap-3">
+                    <select
+                      name="dlocation" // ✅ required
+                      required
+                      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+                    >
+                      <option value="" className="text-black">
+                        Dealer / Depo
+                      </option>
+                      <option value="Dealer" className="text-black">
+                        Dealer
+                      </option>
+                      <option value="Depo" className="text-black">
+                        Depo
+                      </option>
+                    </select>
 
-  <div className="grid grid-cols-2 gap-3">
-    <select
-      name="dlocation" // ✅ required
-      required
-      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
-    >
-      <option value="" className="text-black">
-        Dealer / Depo
-      </option>
-      <option value="Dealer" className="text-black">
-        Dealer
-      </option>
-      <option value="Depo" className="text-black">
-        Depo
-      </option>
-    </select>
+                    <select
+                      type="text"
+                      name="district" // ✅ required
+                      required
+                      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
+                    >
+                      <option value="" className="text-black">
+                        District
+                      </option>
+                      <option value="Dhaka" className="text-black">
+                        Dhaka
+                      </option>
+                      <option value="Chattogram" className="text-black">
+                        Chattogram
+                      </option>
+                      <option value="Rajshahi" className="text-black">
+                        Rajshahi
+                      </option>
+                    </select>
+                  </div>
 
-    <select
-      type="text"
-            name="district" // ✅ required
-      required
-      className="px-4 py-3 rounded-lg bg-white/10 text-white outline-none border border-white/20"
-    >
-      <option value="" className="text-black">
-        District
-      </option>
-      <option value="Dhaka" className="text-black">
-        Dhaka
-      </option>
-      <option value="Chattogram" className="text-black">
-        Chattogram
-      </option>
-      <option value="Rajshahi" className="text-black">
-        Rajshahi
-      </option>
-    </select>
-  </div>
+                  <label className="flex items-start gap-2 text-white text-sm">
+                    <input
+                      type="checkbox"
+                      required
+                      className="mt-1 accent-white"
+                    />
+                    I consent to receiving calls based on the information
+                    provided above.
+                  </label>
 
-  <label className="flex items-start gap-2 text-white text-sm">
-    <input
-      type="checkbox"
-      required
-      className="mt-1 accent-white"
-    />
-    I consent to receiving calls based on the information provided above.
-  </label>
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-60"
+                  >
+                    {isSending ? "Sending..." : "Submit"}
+                  </button>
 
-  <button
-    type="submit"
-    disabled={isSending}
-    className="w-full bg-white text-blue-700 font-semibold py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-60"
-  >
-    {isSending ? "Sending..." : "Submit"}
-  </button>
-
-  {sent && (
-    <p className="text-green-300 text-sm text-center">
-      ✅ Your request has been sent successfully!
-    </p>
-  )}
-</form>
-
-    </div>
-  </div>
-)}
+                  {sent && (
+                    <p className="text-green-300 text-sm text-center">
+                      ✅ Your request has been sent successfully!
+                    </p>
+                  )}
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </section>

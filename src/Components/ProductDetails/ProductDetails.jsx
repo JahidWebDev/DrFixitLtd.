@@ -13,8 +13,11 @@ import product5 from "../../New-construction-images/Dr-Fixit-Brand-5400-Interior
 import product8 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-18-Litre 02.png";
 import product9 from "../../New-construction-images/Fevilock-500-ml.png";
 import product10 from "../../New-construction-images/Dr-Fixit-Brand-5100-Exterior-Sealer-18-Litre.png";
+
+
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
+import product13 from "../../New-construction-images/DR.FIXIT_FIXIFIN_2K.png";
 
 const products = [
   {
@@ -166,13 +169,39 @@ const products = [
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product10 }],
   },
-
+ {
+    id: 14,
+    title: "FIXIFIN2K Advanced Acrylic Cement-Based Waterproof Coating System",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "18 Litre",
+    subtitle: "FIXIFIN2K ",
+    subtitletwo: "Advanced Acrylic Cement-Based Waterproof Coating System",
+   description: (
+  <>
+    FIXIFIN2K is an advanced acrylic cement-based waterproof coating
+    system developed to provide long-lasting protection against water
+    seepage, leakage, and moisture damage. Its two-component formulation
+    creates a durable, flexible, and highly adhesive waterproof membrane
+    that effectively protects concrete and masonry surfaces in both
+    residential and commercial applications.
+    <br />
+    <br />
+    Designed for use in bathrooms, kitchens, water tanks, roofs,
+    balconies, and damp walls, FIXIFIN2K helps extend the life of
+    structures by preventing water ingress and reducing maintenance
+    costs.
+  </>
+),
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product13 }],
+  },
   {
     id: 12,
     title: "1kg Dr. Fixit Multi Purpose Rust Remover",
     brand: "Dr. Fixit Limited",
     category: "Rust Remover",
-    quantity: "1 Kg",
+    quantity: "1 Liter ",
     subtitle: "Dr. Fixit Rust Remover - Multi-Purpose",
     description:
       "Dr. Fixit Rust Remover is a highly effective chemical solution designed to remove rust, corrosion, and stubborn iron oxide deposits from metal surfaces, tools, and construction equipment. It restores metal surfaces to their original clean condition without causing damage to the base metal.",
