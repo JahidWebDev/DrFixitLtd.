@@ -18,6 +18,8 @@ import product10 from "../../New-construction-images/Dr-Fixit-Brand-5100-Exterio
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 import product13 from "../../New-construction-images/DR.FIXIT_FIXIFIN_2K.png";
+import product14 from "../../New-construction-images/Fixit_AquaSet_PCE_HES.png";
+import product15 from "../../New-construction-images/Roofseal Classic.png";
 
 const products = [
   {
@@ -196,6 +198,51 @@ const products = [
     availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
     images: [{ id: 1, url: product13 }],
   },
+    {
+    id: 16,
+    title: "Roofseal Classic",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "18 Litre",
+    subtitle: "Roofseal Classic by Dr. Fixit Limited™",
+    subtitletwo: "Long-Lasting Roof Protection with Waterproofing & Cooling Performance",
+   description: (
+  <>
+ Roofseal Classic by Dr. Fixit Limited is a premium roof waterproofing coating designed to provide superior protection
+against water leakage, rain damage, and harsh weather conditions. Powered by
+advanced PU Acrylic Hybrid Emulsion Technology and reinforced with nano fibres,
+t forms a tough, flexible, and durable waterproof membrane
+that helps protect roofs for years.
+    <br />
+    <br />
+ In addition to waterproofing, Roofseal Classic reflects heat and helps reduce roof
+surface temperatures, creating a cooler and more comfortable indoor environment
+while improving the durability of the structure.
+  </>
+),
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product15 }],
+  }, 
+  {
+    id: 15,
+    title: "Fixit AquaSet PCE-HES™",
+    brand: "Dr. Fixit Limited",
+    category: "Admixture",
+    quantity: "18 Litre",
+    subtitle: "Fixit AquaSet PCE-HES™",
+    subtitletwo: "Advanced PCE-Based Waterproofing Admixture for Stronger & Durable Concrete",
+   description: (
+  <>
+ Fixit AquaSet PCE-HES™ by Dr. Fixit Limited is a high-performance Polycarboxylate Ether (PCE)-based integral waterproofing admixture designed to improve concrete strength, durability, and water resistance. This advanced formulation combines the benefits of a water reducer, accelerator, and integral waterproofing technology in a single solution, making it ideal for modern construction projects requiring superior concrete performance.
+    <br />
+    <br />
+ Engineered to enhance workability while reducing water demand, AquaSet PCE-HES™ delivers faster strength development and long-lasting protection against water penetration.
+  </>
+),
+    availablePackaging: "1 litre, 5 litre, 10 litre, and 20 litre",
+    images: [{ id: 1, url: product14 }],
+  },
+  
   {
     id: 12,
     title: "1kg Dr. Fixit Multi Purpose Rust Remover",

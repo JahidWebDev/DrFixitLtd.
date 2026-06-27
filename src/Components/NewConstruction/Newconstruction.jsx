@@ -18,6 +18,8 @@ import product10 from "../../New-construction-images//Dr-Fixit-Brand-5100-Exteri
 import product11 from "../../New-construction-images/Rust-Remover-01-Litre.png";
 import product12 from "../../New-construction-images/Dr-Fixit-Brand-302-Super-Latex-1-Litre.png";
 import product13 from "../../New-construction-images/DR.FIXIT_FIXIFIN_2K.png";
+import product14 from "../../New-construction-images/Fixit_AquaSet_PCE_HES.png";
+import product15 from "../../New-construction-images/Roofseal Classic.png";
 
 const Newconstruction = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -125,8 +127,27 @@ const Newconstruction = () => {
       category: "Glue",
       imgs: [product13],
       description: "18 Liter Bonding Expert",
-      imgClass: "h-72 w-full", // custom size
+      
     },
+       {
+      id: 16,
+      name: "Roofseal Classic",
+      type: "repair",
+      category: "Glue",
+      imgs: [product15],
+      description: "18 Liter Bonding Expert",
+      
+    },
+    {
+      id: 15,
+      name: "Fixit AquaSet PCE-HES™",
+      type: "repair",
+      category: "Glue",
+      imgs: [product14],
+      description: "18 Liter Bonding Expert",
+      
+    },
+ 
     {
       id: 12,
       name: "Dr Fixit Brand Rust Remover",
@@ -236,7 +257,7 @@ const Newconstruction = () => {
         {/* Background slides */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           {slides.map((slide, i) => {
-            const isActive = activeSlide === i; // ✅ define isActive here
+            const isActive = activeSlide === i; 
 
             return (
               <img
